@@ -3,6 +3,8 @@ package com.binto.YYSchedule.common.mybatis.pojo;
 public class TaskFile {
     private Integer taskId;
 
+    private String fileName;
+
     private String fileChecksum;
 
     public Integer getTaskId() {
@@ -11,6 +13,14 @@ public class TaskFile {
 
     public void setTaskId(Integer taskId) {
         this.taskId = taskId;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName == null ? null : fileName.trim();
     }
 
     public String getFileChecksum() {

@@ -3,8 +3,6 @@ package com.binto.YYSchedule.common.mybatis.pojo;
 public class TaskBasic {
     private Integer taskId;
 
-    private String taskPriority;
-
     private String taskPhase;
 
     private String taskStatus;
@@ -15,14 +13,6 @@ public class TaskBasic {
 
     public void setTaskId(Integer taskId) {
         this.taskId = taskId;
-    }
-
-    public String getTaskPriority() {
-        return taskPriority;
-    }
-
-    public void setTaskPriority(String taskPriority) {
-        this.taskPriority = taskPriority == null ? null : taskPriority.trim();
     }
 
     public String getTaskPhase() {

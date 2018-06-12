@@ -14,4 +14,11 @@
 			<artifactId>libthrift</artifactId>
 		</dependency>
   </dependencies>
+  
+  <distributionManagement>
+    <repository>
+         <id>nexus</id>  
+         <url>http://softsec.isc:8081/nexus/content/groups/public</url>  
+    </repository>
+</distributionManagement>
 </project>

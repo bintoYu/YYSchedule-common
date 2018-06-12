@@ -5,6 +5,8 @@ public class JobBasic {
 
     private String jobDistributionMode;
 
+    private String jobPriority;
+
     private String taskPhase;
 
     public Integer getJobId() {
@@ -21,6 +23,14 @@ public class JobBasic {
 
     public void setJobDistributionMode(String jobDistributionMode) {
         this.jobDistributionMode = jobDistributionMode == null ? null : jobDistributionMode.trim();
+    }
+
+    public String getJobPriority() {
+        return jobPriority;
+    }
+
+    public void setJobPriority(String jobPriority) {
+        this.jobPriority = jobPriority == null ? null : jobPriority.trim();
     }
 
     public String getTaskPhase() {

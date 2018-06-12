@@ -234,6 +234,76 @@ public class JobBasicExample {
             return (Criteria) this;
         }
 
+        public Criteria andJobPriorityIsNull() {
+            addCriterion("job_priority is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andJobPriorityIsNotNull() {
+            addCriterion("job_priority is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andJobPriorityEqualTo(String value) {
+            addCriterion("job_priority =", value, "jobPriority");
+            return (Criteria) this;
+        }
+
+        public Criteria andJobPriorityNotEqualTo(String value) {
+            addCriterion("job_priority <>", value, "jobPriority");
+            return (Criteria) this;
+        }
+
+        public Criteria andJobPriorityGreaterThan(String value) {
+            addCriterion("job_priority >", value, "jobPriority");
+            return (Criteria) this;
+        }
+
+        public Criteria andJobPriorityGreaterThanOrEqualTo(String value) {
+            addCriterion("job_priority >=", value, "jobPriority");
+            return (Criteria) this;
+        }
+
+        public Criteria andJobPriorityLessThan(String value) {
+            addCriterion("job_priority <", value, "jobPriority");
+            return (Criteria) this;
+        }
+
+        public Criteria andJobPriorityLessThanOrEqualTo(String value) {
+            addCriterion("job_priority <=", value, "jobPriority");
+            return (Criteria) this;
+        }
+
+        public Criteria andJobPriorityLike(String value) {
+            addCriterion("job_priority like", value, "jobPriority");
+            return (Criteria) this;
+        }
+
+        public Criteria andJobPriorityNotLike(String value) {
+            addCriterion("job_priority not like", value, "jobPriority");
+            return (Criteria) this;
+        }
+
+        public Criteria andJobPriorityIn(List<String> values) {
+            addCriterion("job_priority in", values, "jobPriority");
+            return (Criteria) this;
+        }
+
+        public Criteria andJobPriorityNotIn(List<String> values) {
+            addCriterion("job_priority not in", values, "jobPriority");
+            return (Criteria) this;
+        }
+
+        public Criteria andJobPriorityBetween(String value1, String value2) {
+            addCriterion("job_priority between", value1, value2, "jobPriority");
+            return (Criteria) this;
+        }
+
+        public Criteria andJobPriorityNotBetween(String value1, String value2) {
+            addCriterion("job_priority not between", value1, value2, "jobPriority");
+            return (Criteria) this;
+        }
+
         public Criteria andTaskPhaseIsNull() {
             addCriterion("task_phase is null");
             return (Criteria) this;
