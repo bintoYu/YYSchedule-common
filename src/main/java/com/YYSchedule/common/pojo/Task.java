@@ -1,15 +1,14 @@
 /**
  * 
  */
-package com.binto.YYSchedule.common.pojo;
+package com.YYSchedule.common.pojo;
 
-import com.binto.YYSchedule.common.mybatis.pojo.JobStatus;
-import com.binto.YYSchedule.common.rpc.domain.job.JobOperationRequirement;
-import com.binto.YYSchedule.common.rpc.domain.job.JobPriority;
-import com.binto.YYSchedule.common.rpc.domain.job.JobResourceRequirement;
-import com.binto.YYSchedule.common.rpc.domain.parameter.JobParameter;
-import com.binto.YYSchedule.common.rpc.domain.task.TaskPhase;
-import com.binto.YYSchedule.common.rpc.domain.task.TaskStatus;
+import com.YYSchedule.common.rpc.domain.job.JobOperationRequirement;
+import com.YYSchedule.common.rpc.domain.job.JobPriority;
+import com.YYSchedule.common.rpc.domain.job.JobResourceRequirement;
+import com.YYSchedule.common.rpc.domain.parameter.JobParameter;
+import com.YYSchedule.common.rpc.domain.task.TaskPhase;
+import com.YYSchedule.common.rpc.domain.task.TaskStatus;
 
 /**
  * Task.java

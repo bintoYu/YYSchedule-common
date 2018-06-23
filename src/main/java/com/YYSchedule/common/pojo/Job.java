@@ -1,15 +1,16 @@
 /**
  * 
  */
-package com.binto.YYSchedule.common.pojo;
+package com.YYSchedule.common.pojo;
 
+import java.util.Date;
 import java.util.List;
 
-import com.binto.YYSchedule.common.rpc.domain.job.JobDistributionMode;
-import com.binto.YYSchedule.common.rpc.domain.job.JobOperationRequirement;
-import com.binto.YYSchedule.common.rpc.domain.job.JobPriority;
-import com.binto.YYSchedule.common.rpc.domain.job.JobResourceRequirement;
-import com.binto.YYSchedule.common.rpc.domain.parameter.JobParameter;
+import com.YYSchedule.common.rpc.domain.job.JobDistributionMode;
+import com.YYSchedule.common.rpc.domain.job.JobOperationRequirement;
+import com.YYSchedule.common.rpc.domain.job.JobPriority;
+import com.YYSchedule.common.rpc.domain.job.JobResourceRequirement;
+import com.YYSchedule.common.rpc.domain.parameter.JobParameter;
 
 /**
  * 任务类
@@ -23,6 +24,8 @@ public class Job implements Comparable<Job> {
 	
 	private long jobId;
 	
+	private List<String> fileList;
+	
 	private JobDistributionMode jobDistributionMode;
 	
 	private JobPriority jobPriority;
@@ -35,13 +38,11 @@ public class Job implements Comparable<Job> {
 	
 	private int jobStatus;
 	
-	private long impatienceTime;
+//	private long impatienceTime;
 	
-	private long committedTime;
+	private Date committedTime;
 	
-	private String functionName;
-	
-	private String missionId;
+	private int missionId;
 	
 	/* (non-Javadoc)
 	 * @see java.lang.Comparable#compareTo(java.lang.Object)
@@ -49,7 +50,7 @@ public class Job implements Comparable<Job> {
 	@Override
 	public int compareTo(Job job) {
 		if (jobPriority.getValue() == job.getJobPriority().getValue()) {
-			return Long.valueOf(committedTime).compareTo(job.getCommittedTime());
+			return committedTime.toString().compareTo(job.getCommittedTime().toString());
 		}
 		return Integer.valueOf(jobPriority.getValue()).compareTo(job.getJobPriority().getValue());
 	}
@@ -68,14 +69,6 @@ public class Job implements Comparable<Job> {
 
 	public void setJobId(long jobId) {
 		this.jobId = jobId;
-	}
-
-	public String getFunctionName() {
-		return functionName;
-	}
-
-	public void setFunctionName(String functionName) {
-		this.functionName = functionName;
 	}
 	
 	public JobDistributionMode getJobDistributionMode() {
@@ -128,27 +121,32 @@ public class Job implements Comparable<Job> {
 		this.jobStatus = jobStatus;
 	}
 
-	public long getImpatienceTime() {
-		return impatienceTime;
-	}
+//	public long getImpatienceTime() {
+//		return impatienceTime;
+//	}
+//
+//	public void setImpatienceTime(long impatienceTime) {
+//		this.impatienceTime = impatienceTime;
+//	}
 
-	public void setImpatienceTime(long impatienceTime) {
-		this.impatienceTime = impatienceTime;
-	}
-
-	public long getCommittedTime() {
+	public Date getCommittedTime()
+	{
 		return committedTime;
 	}
 
-	public void setCommittedTime(long committedTime) {
+	public void setCommittedTime(Date committedTime)
+	{
 		this.committedTime = committedTime;
 	}
 
-	public String getMissionId() {
+
+	public int getMissionId()
+	{
 		return missionId;
 	}
 
-	public void setMissionId(String missionId) {
+	public void setMissionId(int missionId)
+	{
 		this.missionId = missionId;
 	}
 
@@ -156,7 +154,7 @@ public class Job implements Comparable<Job> {
 	public String toString() {
 		return "Job [submitterId=" + submitterId + ", jobId=" + jobId + ", jobDistributionMode=" + jobDistributionMode + ", jobPriority=" + jobPriority + ", jobOperationRequirementList="
 				+ jobOperationRequirementList + ", jobResourceRequirementList=" + jobResourceRequirementList + ", jobParameterList=" + jobParameterList + ", jobStatus=" + jobStatus
-				+ ", impatienceTime=" + impatienceTime + ", committedTime=" + committedTime + ", functionName=" + functionName + ", missionId=" + missionId + "]";
+				+ ", committedTime=" + committedTime.toString() + ", missionId=" + missionId + "]";
 	}
 	
 	

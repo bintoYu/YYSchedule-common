@@ -7,8 +7,8 @@ include "Job.thrift"
 include "Node.thrift"
 include "Parameter.thrift"
 
-namespace java com.binto.YYSchedule.common.rpc.domain.container
-namespace php com.binto.YYSchedule.common.rpc.domain.container
+namespace java com.YYSchedule.common.rpc.domain.container
+namespace php com.YYSchedule.common.rpc.domain.container
 namespace py rpc.container
 
 

@@ -1,8 +1,8 @@
 #
 # Exception definition for rpc 
 #
-namespace java com.binto.YYSchedule.common.rpc.exception
-namespace php com.binto.YYSchedule.common.rpc.exception
+namespace java com.YYSchedule.common.rpc.exception
+namespace php com.YYSchedule.common.rpc.exception
 namespace py rpc.exception
 
 /**  */

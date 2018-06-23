@@ -2,6 +2,7 @@
 # 提供给taskmanager使用的接口
 #
 
+include "Mission.thrift"
 include "Container.thrift"
 include "Exception.thrift"
 include "Task.thrift"
@@ -9,8 +10,8 @@ include "Job.thrift"
 include "Node.thrift"
 include "Parameter.thrift"
 
-namespace java com.binto.YYSchedule.common.rpc.service.task
-namespace php com.binto.YYSchedule.common.rpc.service.task
+namespace java com.YYSchedule.common.rpc.service.task
+namespace php com.YYSchedule.common.rpc.service.task
 namespace py rpc.service.task
 
 # API version (NOT the product version)
@@ -31,32 +32,6 @@ service UserCallTaskService {
 			2:Exception.TimeoutException te
 	),
 
-	/**
-	 * job submit
-	 * @param	userId
-	 * @param	taskPhaseList
-	 * @param	jobDistributionMode
-	 * @param	jobPriority
-	 * @param	jobOperationRequirementList
-	 * @param	jobResourceRequirementList
-	 * @param	parameterList
-	 * @param	impatienceTime
-	 * @return	jobId
-	 */
-	i64 submitJob	(
-		1:	required	i32 								userId,
-		2:	required 	list<Task.TaskPhase> 				taskPhaseList,
-		3:	required 	Job.JobDistributionMode 			jobDistributionMode,
-		4:	required 	Job.JobPriority 					jobPriority,
-		5:	required 	list<Job.JobOperationRequirement>	jobOperationRequirementList,
-		6:	optional 	list<Job.JobResourceRequirement>	jobResourceRequirementList,
-		7:	optional 	list<Parameter.JobParameter>		parameterList,
-		8:	optional 	i64 								impatienceTime
-	)	throws	(
-		1:	Exception.InvalidRequestException 				ire,
-		2:	Exception.UnavailableException 					ue,
-		3:	Exception.TimeoutException 						te
-	),
 
 	/**
 	 * mission submit
@@ -70,15 +45,8 @@ service UserCallTaskService {
 	 * @param	impatienceTime
 	 * @return	missionId
 	 */
-	i64 submitJobForMission	(
-		1:	required	i32 								userId,
-		2:	required 	list<Task.TaskPhase> 				taskPhaseList,
-		3:	required 	Job.JobDistributionMode 			jobDistributionMode,
-		4:	required 	Job.JobPriority 					jobPriority,
-		5:	required 	list<Job.JobOperationRequirement>	jobOperationRequirementList,
-		6:	optional 	list<Job.JobResourceRequirement>	jobResourceRequirementList,
-		7:	optional 	list<Parameter.JobParameter>		parameterList,
-		8:	optional 	i64 								impatienceTime
+	i64 submitMission	(
+		1:	required Mission.Mission						mission
 	)	throws	(
 		1:	Exception.InvalidRequestException 				ire,
 		2:	Exception.UnavailableException 					ue,
@@ -90,8 +58,8 @@ service UserCallTaskService {
 	 * @param	jobIdList
 	 * @return	succeed or not
 	 */
-	i32 terminateJobs	(
-			1:required list<i64>							jobIdList
+	i32 terminateMission	(
+			1:required i32							missionId
 	)	throws	(
 		1:	Exception.InvalidRequestException				ire,
 		2:	Exception.UnavailableException 					ue,
@@ -109,16 +77,6 @@ service UserCallTaskService {
 		2:Exception.TimeoutException						te
 	),
 	
-	/** 
-	 * obtaining cluster statistics
-	 * @param
-	 * @return cluster statistic in json
-	 */
-	string obtainClusterStat(
-	)	throws	(
-		1:	Exception.UnavailableException					ue,
-		2:	Exception.TimeoutException						te
-	),
 }
 
 /** User Service response for RPCs from user */

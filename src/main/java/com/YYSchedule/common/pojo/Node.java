@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.binto.YYSchedule.common.pojo;
+package com.YYSchedule.common.pojo;
 
 
 /**

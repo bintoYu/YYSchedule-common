@@ -4,8 +4,8 @@
 
 include "Task.thrift"
 
-namespace java com.binto.YYSchedule.common.rpc.domain.parameter
-namespace php com.binto.YYSchedule.common.rpc.domain.parameter
+namespace java com.YYSchedule.common.rpc.domain.parameter
+namespace php com.YYSchedule.common.rpc.domain.parameter
 namespace py rpc.parameter
 
 

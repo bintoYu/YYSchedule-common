@@ -1,13 +1,13 @@
 /**
  * 
  */
-package com.binto.YYSchedule.common.pojo;
+package com.YYSchedule.common.pojo;
 
 import java.io.Serializable;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 
-import com.binto.YYSchedule.common.rpc.domain.task.TaskPhase;
+import com.YYSchedule.common.rpc.domain.task.TaskPhase;
 
 /**
  * Result

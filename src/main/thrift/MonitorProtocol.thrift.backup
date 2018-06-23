@@ -4,7 +4,7 @@
 
 include "exception.thrift"
 
-namespace java com.binto.YYSchedule.common.monitor.service
+namespace java com.YYSchedule.common.monitor.service
 
 #
 # Constants definiation

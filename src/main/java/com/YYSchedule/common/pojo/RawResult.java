@@ -1,11 +1,11 @@
 /**
  * 
  */
-package com.binto.YYSchedule.common.pojo;
+package com.YYSchedule.common.pojo;
 
 import java.io.Serializable;
 
-import com.binto.YYSchedule.common.rpc.domain.task.TaskPhase;
+import com.YYSchedule.common.rpc.domain.task.TaskPhase;
 
 /**
  * RawResult.java

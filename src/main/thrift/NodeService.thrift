@@ -7,8 +7,8 @@ include "Exception.thrift"
 include "Job.thrift"
 include "Node.thrift"
 
-namespace java com.binto.YYSchedule.common.rpc.service.node
-namespace php com.binto.YYSchedule.common.rpc.service.node
+namespace java com.YYSchedule.common.rpc.service.node
+namespace php com.YYSchedule.common.rpc.service.node
 namespace py rpc.service.node
 
 # VERSION = "0.1.0"

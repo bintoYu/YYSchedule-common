@@ -4,8 +4,8 @@
 
 include "Node.thrift"
 
-namespace java com.binto.YYSchedule.common.rpc.domain.task
-namespace php com.binto.YYSchedule.common.rpc.domain.task
+namespace java com.YYSchedule.common.rpc.domain.task
+namespace php com.YYSchedule.common.rpc.domain.task
 namespace py rpc.task
 
 /** task type enumeration */

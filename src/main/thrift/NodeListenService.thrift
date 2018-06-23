@@ -3,7 +3,7 @@
 
 include	"Node.thrift"
 
-namespace java com.binto.YYSchedule.common.rpc.service.notify
+namespace java com.YYSchedule.common.rpc.service.notify
 namespace py rpc
 
 # AUTHOR = yubingtao

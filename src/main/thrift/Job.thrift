@@ -5,8 +5,8 @@
 include "Task.thrift"
 include "Node.thrift"
 
-namespace java com.binto.YYSchedule.common.rpc.domain.job
-namespace php com.binto.YYSchedule.common.rpc.domain.job
+namespace java com.YYSchedule.common.rpc.domain.job
+namespace php com.YYSchedule.common.rpc.domain.job
 namespace py rpc.job
 
 /** job distribution mode enumeration */

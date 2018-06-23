@@ -2,8 +2,8 @@
 # Data structures for resource node
 #
 
-namespace java com.binto.YYSchedule.common.rpc.domain.node
-namespace php com.binto.YYSchedule.common.rpc.domain.node
+namespace java com.YYSchedule.common.rpc.domain.node
+namespace php com.YYSchedule.common.rpc.domain.node
 namespace py rpc.node
 
 enum ClusterType {
