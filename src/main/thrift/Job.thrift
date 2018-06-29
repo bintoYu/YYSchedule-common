@@ -3,18 +3,11 @@
 #
 
 include "Task.thrift"
-include "Node.thrift"
+include "Parameter.thrift"
 
 namespace java com.YYSchedule.common.rpc.domain.job
 namespace php com.YYSchedule.common.rpc.domain.job
 namespace py rpc.job
-
-/** job distribution mode enumeration */
-enum JobDistributionMode {
-
-	SERIAL,
-	PARALLEL,
-}
 
  /**
    *job priority
@@ -31,18 +24,12 @@ enum JobDistributionMode {
 	LOW=2,
 	LOWER=0
 }
-/** job operation requirement */
-struct JobOperationRequirement {
 
-	1:	required 	Task.TaskPhase 		taskPhase,
-	2:	optional	i64 				timeout,
-	3:  optional	i64					complexity,
-}
-
-/** job resource requirement */
-struct JobResourceRequirement {
-
-	1:	required 	Task.TaskPhase 		taskPhase,
-	2:	optional	i64 				programId,
-	3:	optional	string 				executorId,
+struct Job{
+	1:	optional	i64					jobId,
+	2:	required	JobPriority			jobPriority,
+	3:	required	Task.TaskPhase		taskPhase,
+	4:	optional	i64					timeout,
+	5:	required	Parameter.JobParameter	jobParameter,
+	6:	optional	double				jobStatus,	
 }

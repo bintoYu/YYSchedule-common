@@ -1,19 +1,14 @@
-/**
- * 
- */
 package com.YYSchedule.common.pojo;
 
-import com.YYSchedule.common.rpc.domain.job.JobOperationRequirement;
 import com.YYSchedule.common.rpc.domain.job.JobPriority;
-import com.YYSchedule.common.rpc.domain.job.JobResourceRequirement;
 import com.YYSchedule.common.rpc.domain.parameter.JobParameter;
 import com.YYSchedule.common.rpc.domain.task.TaskPhase;
 import com.YYSchedule.common.rpc.domain.task.TaskStatus;
 
 /**
  * Task.java
- * @author yanwei
- * @date 2013-3-12 下午6:11:57
+ * @author yubingtao
+ * @date 2018-6-25 
  * @description
  */
 public class Task implements Comparable<Task>{
@@ -22,148 +17,129 @@ public class Task implements Comparable<Task>{
 	
 	private JobPriority taskPriority;
 	
-	private TaskPhase jobPhase;
+	private TaskPhase taskPhase;
 	
-	private JobOperationRequirement taskOperationRequirement;
+	private String fileName;
 	
-	private JobResourceRequirement taskResourceRequirement;
-	
-	private JobParameter taskParameter;
+	private JobParameter jobParameter;
 	
 	private TaskStatus taskStatus;
-	
-	private Long programId;
-	
-	private String executorId;
 	
 	private long loadedTime;
 	
 	private int schedulingTime;
 	
-	private String functionName;
-	
-	private String missionId;
+	private long timeout;
 	
 	public Task() {
 	}
 	
-	/* (non-Javadoc)
-	 * @see java.lang.Comparable#compareTo(java.lang.Object)
-	 */
+
 	@Override
 	public int compareTo(Task task) {
 		if (task != null && task.getTaskId() != 0L && task.getTaskId().equals(taskId)) {
 			return 0;
 		}
 		if (taskPriority.getValue() == task.getTaskPriority().getValue()) {
-			return Long.valueOf(loadedTime).compareTo(task.getLoadedTime());
+			return -(Long.valueOf(loadedTime).compareTo(task.getLoadedTime()));
 		}
-		return Integer.valueOf(taskPriority.getValue()).compareTo(task.getTaskPriority().getValue());
+		return -(Integer.valueOf(taskPriority.getValue()).compareTo(task.getTaskPriority().getValue()));
 	}
 
-	public Long getTaskId() {
+	
+	public String getFileName()
+	{
+		return fileName;
+	}
+
+	public void setFileName(String fileName)
+	{
+		this.fileName = fileName;
+	}
+
+	public void setJobParameter(JobParameter jobParameter)
+	{
+		this.jobParameter = jobParameter;
+	}
+
+	public Long getTaskId()
+	{
 		return taskId;
 	}
 
-	public void setTaskId(Long taskId) {
+	public void setTaskId(Long taskId)
+	{
 		this.taskId = taskId;
 	}
 
-	public JobPriority getTaskPriority() {
+	public JobPriority getTaskPriority()
+	{
 		return taskPriority;
 	}
 
-	public void setTaskPriority(JobPriority taskPriority) {
+	public void setTaskPriority(JobPriority taskPriority)
+	{
 		this.taskPriority = taskPriority;
 	}
 
-	public TaskPhase getJobPhase() {
-		return jobPhase;
+	public TaskPhase getTaskPhase()
+	{
+		return taskPhase;
 	}
 
-	public void setJobPhase(TaskPhase jobPhase) {
-		this.jobPhase = jobPhase;
-	}
-	
-	public String getFunctionName() {
-		return functionName;
+	public void setTaskPhase(TaskPhase taskPhase)
+	{
+		this.taskPhase = taskPhase;
 	}
 
-	public void setFunctionName(String functionName) {
-		this.functionName = functionName;
+	public JobParameter getJobParameter()
+	{
+		return jobParameter;
 	}
 
-	public JobOperationRequirement getTaskOperationRequirement() {
-		return taskOperationRequirement;
-	}
-	
-	public void setTaskOperationRequirement(JobOperationRequirement taskOperationRequirement) {
-		this.taskOperationRequirement = taskOperationRequirement;
+	public void setTaskParameter(JobParameter jobParameter)
+	{
+		this.jobParameter = jobParameter;
 	}
 
-	public JobResourceRequirement getTaskResourceRequirement() {
-		return taskResourceRequirement;
-	}
-
-	public void setTaskResourceRequirement(
-			JobResourceRequirement taskResourceRequirement) {
-		this.taskResourceRequirement = taskResourceRequirement;
-	}
-
-	public JobParameter getTaskParameter() {
-		return taskParameter;
-	}
-
-	public void setTaskParameter(JobParameter taskParameter) {
-		this.taskParameter = taskParameter;
-	}
-
-	public TaskStatus getTaskStatus() {
+	public TaskStatus getTaskStatus()
+	{
 		return taskStatus;
 	}
 
-	public void setTaskStatus(TaskStatus taskStatus) {
+	public void setTaskStatus(TaskStatus taskStatus)
+	{
 		this.taskStatus = taskStatus;
 	}
 
-	public Long getProgramId() {
-		return programId;
-	}
-
-	public void setProgramId(Long programId) {
-		this.programId = programId;
-	}
-
-	public String getExecutorId() {
-		return executorId;
-	}
-
-	public void setExecutorId(String executorId) {
-		this.executorId = executorId;
-	}
-
-	public long getLoadedTime() {
+	public long getLoadedTime()
+	{
 		return loadedTime;
 	}
 
-	public void setLoadedTime(long loadedTime) {
+	public void setLoadedTime(long loadedTime)
+	{
 		this.loadedTime = loadedTime;
 	}
-	
-	public int getSchedulingTime() {
+
+	public int getSchedulingTime()
+	{
 		return schedulingTime;
 	}
-	
-	public void setSchedulingTime(int schedulingTime) {
+
+	public void setSchedulingTime(int schedulingTime)
+	{
 		this.schedulingTime = schedulingTime;
 	}
 
-	public String getMissionId() {
-		return missionId;
+	public long getTimeout()
+	{
+		return timeout;
 	}
 
-	public void setMissionId(String missionId) {
-		this.missionId = missionId;
+	public void setTimeout(long timeout)
+	{
+		this.timeout = timeout;
 	}
 
 	@Override
@@ -189,11 +165,18 @@ public class Task implements Comparable<Task>{
 	}
 
 	@Override
-	public String toString() {
-		return "Task [taskId=" + taskId + ", taskPriority=" + taskPriority + ", jobPhase=" + jobPhase + ", taskOperationRequirement=" + taskOperationRequirement + ", taskResourceRequirement="
-				+ taskResourceRequirement + ", taskParameter=" + taskParameter + ", taskStatus=" + taskStatus + ", programId=" + programId + ", executorId=" + executorId + ", loadedTime="
-				+ loadedTime + ", schedulingTime=" + schedulingTime + ", functionName=" + functionName + ", missionId=" + missionId + "]";
+	public String toString()
+	{
+		return "Task [taskId=" + taskId + ", taskPriority=" + taskPriority
+				+ ", taskPhase=" + taskPhase + ", fileName=" + fileName
+				+ ", jobParameter=" + jobParameter + ", taskStatus="
+				+ taskStatus + ", loadedTime=" + loadedTime
+				+ ", schedulingTime=" + schedulingTime + ", timeout=" + timeout
+				+ "]";
 	}
+
+
+
 
 
 	
