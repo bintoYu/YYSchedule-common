@@ -77,6 +77,16 @@ service UserCallTaskService {
 		2:Exception.TimeoutException						te
 	),
 	
+	/** 
+	 * obtaining nodePayload from taskmanager
+	 * @return node information
+	 */
+	list<Node.NodePayload> obtainAllNode(
+	)	throws	(
+		1:Exception.UnavailableException					ue,
+		2:Exception.TimeoutException						te
+	),
+	
 }
 
 /** User Service response for RPCs from user */
@@ -163,7 +173,7 @@ service NodeCallTaskService {
 	 * @return	succeed or not
 	 */
 	i32 registerNode(
-		1:	required	Node.NodeInfo						nodeInfo
+		1:	required	Node.NodePayload					nodePayload
 	)	throws	(
 		1:	Exception.InvalidRequestException 				ire,
 		2:	Exception.UnavailableException 					ue,

@@ -2,8 +2,6 @@
 # Data structures for task
 #
 
-include "Node.thrift"
-
 namespace java com.YYSchedule.common.rpc.domain.task
 namespace php com.YYSchedule.common.rpc.domain.task
 namespace py rpc.task
@@ -18,8 +16,8 @@ enum TaskPhase {
 enum TaskStatus {
 
 	COMMITTED,
-	SCHEDULING_FAILED,
-	SCHEDULED,
+	DISTRIBUTE_FAILED,
+	DISTRIBUTED,
 	ISSUE_FAILED,
 	ISSUED,
 	ACCEPT_FAILED,

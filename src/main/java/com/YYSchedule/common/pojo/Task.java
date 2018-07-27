@@ -1,5 +1,7 @@
 package com.YYSchedule.common.pojo;
 
+import java.io.Serializable;
+
 import com.YYSchedule.common.rpc.domain.job.JobPriority;
 import com.YYSchedule.common.rpc.domain.parameter.JobParameter;
 import com.YYSchedule.common.rpc.domain.task.TaskPhase;
@@ -11,7 +13,7 @@ import com.YYSchedule.common.rpc.domain.task.TaskStatus;
  * @date 2018-6-25 
  * @description
  */
-public class Task implements Comparable<Task>{
+public class Task implements Comparable<Task>,Serializable{
 
 	private Long taskId;
 	
@@ -30,6 +32,8 @@ public class Task implements Comparable<Task>{
 	private int schedulingTime;
 	
 	private long timeout;
+	
+	private String executorId;
 	
 	public Task() {
 	}
@@ -141,6 +145,18 @@ public class Task implements Comparable<Task>{
 	{
 		this.timeout = timeout;
 	}
+
+	public String getExecutorId()
+	{
+		return executorId;
+	}
+
+
+	public void setExecutorId(String executorId)
+	{
+		this.executorId = executorId;
+	}
+
 
 	@Override
 	public int hashCode() {

@@ -61,16 +61,6 @@ service TaskCallNodeService{
 		4:	Exception.TimeoutException			te
 	),
 					
-	/**
-	 * update node config and status
-	 * @param
-	 * @return Node.Node
-	 */
-	Node.NodeInfo	updateNodeInfo	(
-	)	throws	(
-		1:	Exception.UnavailableException		ue,
-		2:	Exception.TimeoutException			te
-	),
 	
 	/** 
 	 * obtaining queue information
