@@ -3,11 +3,9 @@ package com.YYSchedule.common.mybatis.pojo;
 public class TaskTimestamp {
     private Long taskId;
 
-    private String taskPhase;
-
     private Long loadedTime;
 
-    private Long issuedTime;
+    private Long distributedTime;
 
     private Long startedTime;
 
@@ -21,14 +19,6 @@ public class TaskTimestamp {
         this.taskId = taskId;
     }
 
-    public String getTaskPhase() {
-        return taskPhase;
-    }
-
-    public void setTaskPhase(String taskPhase) {
-        this.taskPhase = taskPhase == null ? null : taskPhase.trim();
-    }
-
     public Long getLoadedTime() {
         return loadedTime;
     }
@@ -37,12 +27,12 @@ public class TaskTimestamp {
         this.loadedTime = loadedTime;
     }
 
-    public Long getIssuedTime() {
-        return issuedTime;
+    public Long getDistributedTime() {
+        return distributedTime;
     }
 
-    public void setIssuedTime(Long issuedTime) {
-        this.issuedTime = issuedTime;
+    public void setDistributedTime(Long distributedTime) {
+        this.distributedTime = distributedTime;
     }
 
     public Long getStartedTime() {

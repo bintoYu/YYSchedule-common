@@ -2,6 +2,7 @@
 # Data structures for resource node
 #
 include "Task.thrift"
+include "Engine.thrift"
 
 namespace java com.YYSchedule.common.rpc.domain.node
 namespace php com.YYSchedule.common.rpc.domain.node
@@ -36,5 +37,6 @@ struct NodePayload {
 	3:	required i32 				queueLimit,
 	4:	required i32 				queueLength,
 	5:	required i64 				expectedDelay,
-	6:	required Task.TaskPhase		taskPhase
+	6:	required Task.TaskPhase		taskPhase,
+	7:	optional list<Engine.EngineLogger> engineLoggerList,
 }

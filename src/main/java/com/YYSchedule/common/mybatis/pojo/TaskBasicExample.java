@@ -363,6 +363,76 @@ public class TaskBasicExample {
             addCriterion("loaded_time not between", value1, value2, "loadedTime");
             return (Criteria) this;
         }
+
+        public Criteria andExecutorIdIsNull() {
+            addCriterion("executor_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andExecutorIdIsNotNull() {
+            addCriterion("executor_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andExecutorIdEqualTo(String value) {
+            addCriterion("executor_id =", value, "executorId");
+            return (Criteria) this;
+        }
+
+        public Criteria andExecutorIdNotEqualTo(String value) {
+            addCriterion("executor_id <>", value, "executorId");
+            return (Criteria) this;
+        }
+
+        public Criteria andExecutorIdGreaterThan(String value) {
+            addCriterion("executor_id >", value, "executorId");
+            return (Criteria) this;
+        }
+
+        public Criteria andExecutorIdGreaterThanOrEqualTo(String value) {
+            addCriterion("executor_id >=", value, "executorId");
+            return (Criteria) this;
+        }
+
+        public Criteria andExecutorIdLessThan(String value) {
+            addCriterion("executor_id <", value, "executorId");
+            return (Criteria) this;
+        }
+
+        public Criteria andExecutorIdLessThanOrEqualTo(String value) {
+            addCriterion("executor_id <=", value, "executorId");
+            return (Criteria) this;
+        }
+
+        public Criteria andExecutorIdLike(String value) {
+            addCriterion("executor_id like", value, "executorId");
+            return (Criteria) this;
+        }
+
+        public Criteria andExecutorIdNotLike(String value) {
+            addCriterion("executor_id not like", value, "executorId");
+            return (Criteria) this;
+        }
+
+        public Criteria andExecutorIdIn(List<String> values) {
+            addCriterion("executor_id in", values, "executorId");
+            return (Criteria) this;
+        }
+
+        public Criteria andExecutorIdNotIn(List<String> values) {
+            addCriterion("executor_id not in", values, "executorId");
+            return (Criteria) this;
+        }
+
+        public Criteria andExecutorIdBetween(String value1, String value2) {
+            addCriterion("executor_id between", value1, value2, "executorId");
+            return (Criteria) this;
+        }
+
+        public Criteria andExecutorIdNotBetween(String value1, String value2) {
+            addCriterion("executor_id not between", value1, value2, "executorId");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

@@ -3,14 +3,14 @@ package com.YYSchedule.common.mybatis.pojo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TaskTimestampExample {
+public class TaskResultExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public TaskTimestampExample() {
+    public TaskResultExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -164,243 +164,213 @@ public class TaskTimestampExample {
             return (Criteria) this;
         }
 
-        public Criteria andLoadedTimeIsNull() {
-            addCriterion("loaded_time is null");
+        public Criteria andFileNameIsNull() {
+            addCriterion("file_name is null");
             return (Criteria) this;
         }
 
-        public Criteria andLoadedTimeIsNotNull() {
-            addCriterion("loaded_time is not null");
+        public Criteria andFileNameIsNotNull() {
+            addCriterion("file_name is not null");
             return (Criteria) this;
         }
 
-        public Criteria andLoadedTimeEqualTo(Long value) {
-            addCriterion("loaded_time =", value, "loadedTime");
+        public Criteria andFileNameEqualTo(String value) {
+            addCriterion("file_name =", value, "fileName");
             return (Criteria) this;
         }
 
-        public Criteria andLoadedTimeNotEqualTo(Long value) {
-            addCriterion("loaded_time <>", value, "loadedTime");
+        public Criteria andFileNameNotEqualTo(String value) {
+            addCriterion("file_name <>", value, "fileName");
             return (Criteria) this;
         }
 
-        public Criteria andLoadedTimeGreaterThan(Long value) {
-            addCriterion("loaded_time >", value, "loadedTime");
+        public Criteria andFileNameGreaterThan(String value) {
+            addCriterion("file_name >", value, "fileName");
             return (Criteria) this;
         }
 
-        public Criteria andLoadedTimeGreaterThanOrEqualTo(Long value) {
-            addCriterion("loaded_time >=", value, "loadedTime");
+        public Criteria andFileNameGreaterThanOrEqualTo(String value) {
+            addCriterion("file_name >=", value, "fileName");
             return (Criteria) this;
         }
 
-        public Criteria andLoadedTimeLessThan(Long value) {
-            addCriterion("loaded_time <", value, "loadedTime");
+        public Criteria andFileNameLessThan(String value) {
+            addCriterion("file_name <", value, "fileName");
             return (Criteria) this;
         }
 
-        public Criteria andLoadedTimeLessThanOrEqualTo(Long value) {
-            addCriterion("loaded_time <=", value, "loadedTime");
+        public Criteria andFileNameLessThanOrEqualTo(String value) {
+            addCriterion("file_name <=", value, "fileName");
             return (Criteria) this;
         }
 
-        public Criteria andLoadedTimeIn(List<Long> values) {
-            addCriterion("loaded_time in", values, "loadedTime");
+        public Criteria andFileNameLike(String value) {
+            addCriterion("file_name like", value, "fileName");
             return (Criteria) this;
         }
 
-        public Criteria andLoadedTimeNotIn(List<Long> values) {
-            addCriterion("loaded_time not in", values, "loadedTime");
+        public Criteria andFileNameNotLike(String value) {
+            addCriterion("file_name not like", value, "fileName");
             return (Criteria) this;
         }
 
-        public Criteria andLoadedTimeBetween(Long value1, Long value2) {
-            addCriterion("loaded_time between", value1, value2, "loadedTime");
+        public Criteria andFileNameIn(List<String> values) {
+            addCriterion("file_name in", values, "fileName");
             return (Criteria) this;
         }
 
-        public Criteria andLoadedTimeNotBetween(Long value1, Long value2) {
-            addCriterion("loaded_time not between", value1, value2, "loadedTime");
+        public Criteria andFileNameNotIn(List<String> values) {
+            addCriterion("file_name not in", values, "fileName");
             return (Criteria) this;
         }
 
-        public Criteria andDistributedTimeIsNull() {
-            addCriterion("distributed_time is null");
+        public Criteria andFileNameBetween(String value1, String value2) {
+            addCriterion("file_name between", value1, value2, "fileName");
             return (Criteria) this;
         }
 
-        public Criteria andDistributedTimeIsNotNull() {
-            addCriterion("distributed_time is not null");
+        public Criteria andFileNameNotBetween(String value1, String value2) {
+            addCriterion("file_name not between", value1, value2, "fileName");
             return (Criteria) this;
         }
 
-        public Criteria andDistributedTimeEqualTo(Long value) {
-            addCriterion("distributed_time =", value, "distributedTime");
+        public Criteria andResultIsNull() {
+            addCriterion("result is null");
             return (Criteria) this;
         }
 
-        public Criteria andDistributedTimeNotEqualTo(Long value) {
-            addCriterion("distributed_time <>", value, "distributedTime");
+        public Criteria andResultIsNotNull() {
+            addCriterion("result is not null");
             return (Criteria) this;
         }
 
-        public Criteria andDistributedTimeGreaterThan(Long value) {
-            addCriterion("distributed_time >", value, "distributedTime");
+        public Criteria andResultEqualTo(String value) {
+            addCriterion("result =", value, "result");
             return (Criteria) this;
         }
 
-        public Criteria andDistributedTimeGreaterThanOrEqualTo(Long value) {
-            addCriterion("distributed_time >=", value, "distributedTime");
+        public Criteria andResultNotEqualTo(String value) {
+            addCriterion("result <>", value, "result");
             return (Criteria) this;
         }
 
-        public Criteria andDistributedTimeLessThan(Long value) {
-            addCriterion("distributed_time <", value, "distributedTime");
+        public Criteria andResultGreaterThan(String value) {
+            addCriterion("result >", value, "result");
             return (Criteria) this;
         }
 
-        public Criteria andDistributedTimeLessThanOrEqualTo(Long value) {
-            addCriterion("distributed_time <=", value, "distributedTime");
+        public Criteria andResultGreaterThanOrEqualTo(String value) {
+            addCriterion("result >=", value, "result");
             return (Criteria) this;
         }
 
-        public Criteria andDistributedTimeIn(List<Long> values) {
-            addCriterion("distributed_time in", values, "distributedTime");
+        public Criteria andResultLessThan(String value) {
+            addCriterion("result <", value, "result");
             return (Criteria) this;
         }
 
-        public Criteria andDistributedTimeNotIn(List<Long> values) {
-            addCriterion("distributed_time not in", values, "distributedTime");
+        public Criteria andResultLessThanOrEqualTo(String value) {
+            addCriterion("result <=", value, "result");
             return (Criteria) this;
         }
 
-        public Criteria andDistributedTimeBetween(Long value1, Long value2) {
-            addCriterion("distributed_time between", value1, value2, "distributedTime");
+        public Criteria andResultLike(String value) {
+            addCriterion("result like", value, "result");
             return (Criteria) this;
         }
 
-        public Criteria andDistributedTimeNotBetween(Long value1, Long value2) {
-            addCriterion("distributed_time not between", value1, value2, "distributedTime");
+        public Criteria andResultNotLike(String value) {
+            addCriterion("result not like", value, "result");
             return (Criteria) this;
         }
 
-        public Criteria andStartedTimeIsNull() {
-            addCriterion("started_time is null");
+        public Criteria andResultIn(List<String> values) {
+            addCriterion("result in", values, "result");
             return (Criteria) this;
         }
 
-        public Criteria andStartedTimeIsNotNull() {
-            addCriterion("started_time is not null");
+        public Criteria andResultNotIn(List<String> values) {
+            addCriterion("result not in", values, "result");
             return (Criteria) this;
         }
 
-        public Criteria andStartedTimeEqualTo(Long value) {
-            addCriterion("started_time =", value, "startedTime");
+        public Criteria andResultBetween(String value1, String value2) {
+            addCriterion("result between", value1, value2, "result");
             return (Criteria) this;
         }
 
-        public Criteria andStartedTimeNotEqualTo(Long value) {
-            addCriterion("started_time <>", value, "startedTime");
+        public Criteria andResultNotBetween(String value1, String value2) {
+            addCriterion("result not between", value1, value2, "result");
             return (Criteria) this;
         }
 
-        public Criteria andStartedTimeGreaterThan(Long value) {
-            addCriterion("started_time >", value, "startedTime");
+        public Criteria andLoggerIsNull() {
+            addCriterion("logger is null");
             return (Criteria) this;
         }
 
-        public Criteria andStartedTimeGreaterThanOrEqualTo(Long value) {
-            addCriterion("started_time >=", value, "startedTime");
+        public Criteria andLoggerIsNotNull() {
+            addCriterion("logger is not null");
             return (Criteria) this;
         }
 
-        public Criteria andStartedTimeLessThan(Long value) {
-            addCriterion("started_time <", value, "startedTime");
+        public Criteria andLoggerEqualTo(String value) {
+            addCriterion("logger =", value, "logger");
             return (Criteria) this;
         }
 
-        public Criteria andStartedTimeLessThanOrEqualTo(Long value) {
-            addCriterion("started_time <=", value, "startedTime");
+        public Criteria andLoggerNotEqualTo(String value) {
+            addCriterion("logger <>", value, "logger");
             return (Criteria) this;
         }
 
-        public Criteria andStartedTimeIn(List<Long> values) {
-            addCriterion("started_time in", values, "startedTime");
+        public Criteria andLoggerGreaterThan(String value) {
+            addCriterion("logger >", value, "logger");
             return (Criteria) this;
         }
 
-        public Criteria andStartedTimeNotIn(List<Long> values) {
-            addCriterion("started_time not in", values, "startedTime");
+        public Criteria andLoggerGreaterThanOrEqualTo(String value) {
+            addCriterion("logger >=", value, "logger");
             return (Criteria) this;
         }
 
-        public Criteria andStartedTimeBetween(Long value1, Long value2) {
-            addCriterion("started_time between", value1, value2, "startedTime");
+        public Criteria andLoggerLessThan(String value) {
+            addCriterion("logger <", value, "logger");
             return (Criteria) this;
         }
 
-        public Criteria andStartedTimeNotBetween(Long value1, Long value2) {
-            addCriterion("started_time not between", value1, value2, "startedTime");
+        public Criteria andLoggerLessThanOrEqualTo(String value) {
+            addCriterion("logger <=", value, "logger");
             return (Criteria) this;
         }
 
-        public Criteria andFinishedTimeIsNull() {
-            addCriterion("finished_time is null");
+        public Criteria andLoggerLike(String value) {
+            addCriterion("logger like", value, "logger");
             return (Criteria) this;
         }
 
-        public Criteria andFinishedTimeIsNotNull() {
-            addCriterion("finished_time is not null");
+        public Criteria andLoggerNotLike(String value) {
+            addCriterion("logger not like", value, "logger");
             return (Criteria) this;
         }
 
-        public Criteria andFinishedTimeEqualTo(Long value) {
-            addCriterion("finished_time =", value, "finishedTime");
+        public Criteria andLoggerIn(List<String> values) {
+            addCriterion("logger in", values, "logger");
             return (Criteria) this;
         }
 
-        public Criteria andFinishedTimeNotEqualTo(Long value) {
-            addCriterion("finished_time <>", value, "finishedTime");
+        public Criteria andLoggerNotIn(List<String> values) {
+            addCriterion("logger not in", values, "logger");
             return (Criteria) this;
         }
 
-        public Criteria andFinishedTimeGreaterThan(Long value) {
-            addCriterion("finished_time >", value, "finishedTime");
+        public Criteria andLoggerBetween(String value1, String value2) {
+            addCriterion("logger between", value1, value2, "logger");
             return (Criteria) this;
         }
 
-        public Criteria andFinishedTimeGreaterThanOrEqualTo(Long value) {
-            addCriterion("finished_time >=", value, "finishedTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andFinishedTimeLessThan(Long value) {
-            addCriterion("finished_time <", value, "finishedTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andFinishedTimeLessThanOrEqualTo(Long value) {
-            addCriterion("finished_time <=", value, "finishedTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andFinishedTimeIn(List<Long> values) {
-            addCriterion("finished_time in", values, "finishedTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andFinishedTimeNotIn(List<Long> values) {
-            addCriterion("finished_time not in", values, "finishedTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andFinishedTimeBetween(Long value1, Long value2) {
-            addCriterion("finished_time between", value1, value2, "finishedTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andFinishedTimeNotBetween(Long value1, Long value2) {
-            addCriterion("finished_time not between", value1, value2, "finishedTime");
+        public Criteria andLoggerNotBetween(String value1, String value2) {
+            addCriterion("logger not between", value1, value2, "logger");
             return (Criteria) this;
         }
     }

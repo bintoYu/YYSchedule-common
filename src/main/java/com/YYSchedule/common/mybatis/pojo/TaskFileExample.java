@@ -164,143 +164,73 @@ public class TaskFileExample {
             return (Criteria) this;
         }
 
-        public Criteria andFileNameIsNull() {
-            addCriterion("file_name is null");
+        public Criteria andFilePathIsNull() {
+            addCriterion("file_path is null");
             return (Criteria) this;
         }
 
-        public Criteria andFileNameIsNotNull() {
-            addCriterion("file_name is not null");
+        public Criteria andFilePathIsNotNull() {
+            addCriterion("file_path is not null");
             return (Criteria) this;
         }
 
-        public Criteria andFileNameEqualTo(String value) {
-            addCriterion("file_name =", value, "fileName");
+        public Criteria andFilePathEqualTo(String value) {
+            addCriterion("file_path =", value, "filePath");
             return (Criteria) this;
         }
 
-        public Criteria andFileNameNotEqualTo(String value) {
-            addCriterion("file_name <>", value, "fileName");
+        public Criteria andFilePathNotEqualTo(String value) {
+            addCriterion("file_path <>", value, "filePath");
             return (Criteria) this;
         }
 
-        public Criteria andFileNameGreaterThan(String value) {
-            addCriterion("file_name >", value, "fileName");
+        public Criteria andFilePathGreaterThan(String value) {
+            addCriterion("file_path >", value, "filePath");
             return (Criteria) this;
         }
 
-        public Criteria andFileNameGreaterThanOrEqualTo(String value) {
-            addCriterion("file_name >=", value, "fileName");
+        public Criteria andFilePathGreaterThanOrEqualTo(String value) {
+            addCriterion("file_path >=", value, "filePath");
             return (Criteria) this;
         }
 
-        public Criteria andFileNameLessThan(String value) {
-            addCriterion("file_name <", value, "fileName");
+        public Criteria andFilePathLessThan(String value) {
+            addCriterion("file_path <", value, "filePath");
             return (Criteria) this;
         }
 
-        public Criteria andFileNameLessThanOrEqualTo(String value) {
-            addCriterion("file_name <=", value, "fileName");
+        public Criteria andFilePathLessThanOrEqualTo(String value) {
+            addCriterion("file_path <=", value, "filePath");
             return (Criteria) this;
         }
 
-        public Criteria andFileNameLike(String value) {
-            addCriterion("file_name like", value, "fileName");
+        public Criteria andFilePathLike(String value) {
+            addCriterion("file_path like", value, "filePath");
             return (Criteria) this;
         }
 
-        public Criteria andFileNameNotLike(String value) {
-            addCriterion("file_name not like", value, "fileName");
+        public Criteria andFilePathNotLike(String value) {
+            addCriterion("file_path not like", value, "filePath");
             return (Criteria) this;
         }
 
-        public Criteria andFileNameIn(List<String> values) {
-            addCriterion("file_name in", values, "fileName");
+        public Criteria andFilePathIn(List<String> values) {
+            addCriterion("file_path in", values, "filePath");
             return (Criteria) this;
         }
 
-        public Criteria andFileNameNotIn(List<String> values) {
-            addCriterion("file_name not in", values, "fileName");
+        public Criteria andFilePathNotIn(List<String> values) {
+            addCriterion("file_path not in", values, "filePath");
             return (Criteria) this;
         }
 
-        public Criteria andFileNameBetween(String value1, String value2) {
-            addCriterion("file_name between", value1, value2, "fileName");
+        public Criteria andFilePathBetween(String value1, String value2) {
+            addCriterion("file_path between", value1, value2, "filePath");
             return (Criteria) this;
         }
 
-        public Criteria andFileNameNotBetween(String value1, String value2) {
-            addCriterion("file_name not between", value1, value2, "fileName");
-            return (Criteria) this;
-        }
-
-        public Criteria andFileChecksumIsNull() {
-            addCriterion("file_checksum is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andFileChecksumIsNotNull() {
-            addCriterion("file_checksum is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andFileChecksumEqualTo(String value) {
-            addCriterion("file_checksum =", value, "fileChecksum");
-            return (Criteria) this;
-        }
-
-        public Criteria andFileChecksumNotEqualTo(String value) {
-            addCriterion("file_checksum <>", value, "fileChecksum");
-            return (Criteria) this;
-        }
-
-        public Criteria andFileChecksumGreaterThan(String value) {
-            addCriterion("file_checksum >", value, "fileChecksum");
-            return (Criteria) this;
-        }
-
-        public Criteria andFileChecksumGreaterThanOrEqualTo(String value) {
-            addCriterion("file_checksum >=", value, "fileChecksum");
-            return (Criteria) this;
-        }
-
-        public Criteria andFileChecksumLessThan(String value) {
-            addCriterion("file_checksum <", value, "fileChecksum");
-            return (Criteria) this;
-        }
-
-        public Criteria andFileChecksumLessThanOrEqualTo(String value) {
-            addCriterion("file_checksum <=", value, "fileChecksum");
-            return (Criteria) this;
-        }
-
-        public Criteria andFileChecksumLike(String value) {
-            addCriterion("file_checksum like", value, "fileChecksum");
-            return (Criteria) this;
-        }
-
-        public Criteria andFileChecksumNotLike(String value) {
-            addCriterion("file_checksum not like", value, "fileChecksum");
-            return (Criteria) this;
-        }
-
-        public Criteria andFileChecksumIn(List<String> values) {
-            addCriterion("file_checksum in", values, "fileChecksum");
-            return (Criteria) this;
-        }
-
-        public Criteria andFileChecksumNotIn(List<String> values) {
-            addCriterion("file_checksum not in", values, "fileChecksum");
-            return (Criteria) this;
-        }
-
-        public Criteria andFileChecksumBetween(String value1, String value2) {
-            addCriterion("file_checksum between", value1, value2, "fileChecksum");
-            return (Criteria) this;
-        }
-
-        public Criteria andFileChecksumNotBetween(String value1, String value2) {
-            addCriterion("file_checksum not between", value1, value2, "fileChecksum");
+        public Criteria andFilePathNotBetween(String value1, String value2) {
+            addCriterion("file_path not between", value1, value2, "filePath");
             return (Criteria) this;
         }
     }

@@ -214,14 +214,13 @@ service NodeCallTaskService {
 	/**
 	 * receive result
 	 * @param	taskId
-	 * @param	content
+	 * @param	result
 	 * @param	name
 	 * @return	succeed or not
 	 */
 	i32 submitResult (
 		1:	required	i64 								taskId,
-		2:	required	string 								name,
-		3:	required	binary 								content
+		2:	required	string 								result
 	)	throws	(
 		1:	Exception.InvalidRequestException				ire,
 		2:	Exception.UnavailableException					ue,

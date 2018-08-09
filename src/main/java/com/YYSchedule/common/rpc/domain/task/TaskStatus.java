@@ -18,16 +18,15 @@ public enum TaskStatus implements org.apache.thrift.TEnum {
   COMMITTED(0),
   DISTRIBUTE_FAILED(1),
   DISTRIBUTED(2),
-  ISSUE_FAILED(3),
-  ISSUED(4),
-  ACCEPT_FAILED(5),
-  ACCEPTED(6),
-  RUNNING(7),
-  INTERRUPTED(8),
-  KILLED(9),
-  TIMEOUT(10),
-  FAILURE(11),
-  FINISHED(12);
+  COLLECTD(3),
+  ACCEPT_FAILED(4),
+  ACCEPTED(5),
+  RUNNING(6),
+  INTERRUPTED(7),
+  KILLED(8),
+  TIMEOUT(9),
+  FAILURE(10),
+  FINISHED(11);
 
   private final int value;
 
@@ -55,24 +54,22 @@ public enum TaskStatus implements org.apache.thrift.TEnum {
       case 2:
         return DISTRIBUTED;
       case 3:
-        return ISSUE_FAILED;
+        return COLLECTD;
       case 4:
-        return ISSUED;
-      case 5:
         return ACCEPT_FAILED;
-      case 6:
+      case 5:
         return ACCEPTED;
-      case 7:
+      case 6:
         return RUNNING;
-      case 8:
+      case 7:
         return INTERRUPTED;
-      case 9:
+      case 8:
         return KILLED;
-      case 10:
+      case 9:
         return TIMEOUT;
-      case 11:
+      case 10:
         return FAILURE;
-      case 12:
+      case 11:
         return FINISHED;
       default:
         return null;

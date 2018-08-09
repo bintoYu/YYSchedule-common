@@ -9,6 +9,8 @@ public class TaskBasic {
 
     private Long loadedTime;
 
+    private String executorId;
+
     public Long getTaskId() {
         return taskId;
     }
@@ -39,5 +41,13 @@ public class TaskBasic {
 
     public void setLoadedTime(Long loadedTime) {
         this.loadedTime = loadedTime;
+    }
+
+    public String getExecutorId() {
+        return executorId;
+    }
+
+    public void setExecutorId(String executorId) {
+        this.executorId = executorId == null ? null : executorId.trim();
     }
 }

@@ -8,8 +8,12 @@ import com.YYSchedule.common.mybatis.pojo.JobStatus;
 import com.YYSchedule.common.mybatis.pojo.MissionBasic;
 import com.YYSchedule.common.mybatis.pojo.TaskBasic;
 import com.YYSchedule.common.mybatis.pojo.TaskFile;
+import com.YYSchedule.common.mybatis.pojo.TaskResult;
+import com.YYSchedule.common.mybatis.pojo.TaskTimestamp;
 import com.YYSchedule.common.pojo.NodeItem;
+import com.YYSchedule.common.pojo.Result;
 import com.YYSchedule.common.pojo.Task;
+import com.YYSchedule.common.rpc.domain.engine.EngineLogger;
 import com.YYSchedule.common.rpc.domain.job.Job;
 import com.YYSchedule.common.rpc.domain.mission.Mission;
 import com.YYSchedule.common.rpc.domain.node.NodePayload;
@@ -40,15 +44,27 @@ public class Bean2BeanUtils
 		return jobBasic;
 	}
 	
-	public static JobStatus Job2JobStatus(Job job)
+	public static JobStatus Job2JobStatus(Job job,int taskNum)
 	{
 		JobStatus jobStatus = new JobStatus();
 		
 		jobStatus.setJobId(job.getJobId());
 		jobStatus.setJobStatus(0.0);
+		jobStatus.setTaskNum(taskNum);
 		jobStatus.setCommittedTime(System.currentTimeMillis());
 		
 		return jobStatus;
+	}
+	
+	public static TaskBasic task2TaskBasic(Task task)
+	{
+		TaskBasic taskBasic = new TaskBasic();
+		taskBasic.setTaskId(task.getTaskId());
+		taskBasic.setTaskPhase(task.getTaskPhase().toString());
+		taskBasic.setTaskStatus(task.getTaskStatus().toString());
+		taskBasic.setLoadedTime(task.getLoadedTime());
+		
+		return taskBasic;
 	}
 	
 	public static List<TaskBasic> taskList2TaskBasicList(List<Task> taskList)
@@ -75,12 +91,27 @@ public class Bean2BeanUtils
 		{
 			TaskFile taskFile = new TaskFile();
 			taskFile.setTaskId(task.getTaskId());
-			taskFile.setFileName(task.getFileName());
+			taskFile.setFilePath(task.getFileName());
 			
 			taskFileList.add(taskFile);
 		}
 		
 		return taskFileList;
+	}
+	
+	public static List<TaskTimestamp> taskList2TaskTimestampList(List<Task> taskList)
+	{
+		List<TaskTimestamp> taskTimestampList= new ArrayList<>();
+		for(Task task : taskList)
+		{
+			TaskTimestamp taskTimestamp = new TaskTimestamp();
+			taskTimestamp.setTaskId(task.getTaskId());
+			taskTimestamp.setLoadedTime(task.getLoadedTime());
+			
+			taskTimestampList.add(taskTimestamp);
+		}
+		
+		return taskTimestampList;
 	}
 	
 	public static NodePayload nodeItem2NodePayload(NodeItem nodeItem)
@@ -91,6 +122,7 @@ public class Bean2BeanUtils
 		nodePayload.setQueueLength(nodeItem.getQueueLength());
 		nodePayload.setExpectedDelay(nodeItem.getExpectedDelay());
 		nodePayload.setTaskPhase(nodeItem.getTaskPhase());
+		nodePayload.setEngineLoggerList(nodeItem.getEngineLoggerList());
 		
 		NodeRuntime nodeRuntime = new NodeRuntime();
 		nodeRuntime.setCpuCount(nodeItem.getCpuCount());
@@ -103,5 +135,34 @@ public class Bean2BeanUtils
 		nodePayload.setNodeRuntime(nodeRuntime);
 		return nodePayload;
 		
+	}
+	
+	/**
+	 * @param engineLoggers
+	 * @return
+	 */
+	public static List<TaskResult> engineLoggerList2TaskResultList(List<EngineLogger> engineLoggers)
+	{
+		List<TaskResult> taskResultList = new ArrayList<>();
+		for(EngineLogger engineLogger : engineLoggers)
+		{
+			TaskResult taskResult = new TaskResult();
+			taskResult.setTaskId(engineLogger.getTaskId());
+			taskResult.setLogger(engineLogger.getContent());
+			
+			taskResultList.add(taskResult);
+		}
+		
+		return taskResultList;
+	}
+	
+	public static TaskResult result2TaskResult(Result result)
+	{
+		TaskResult taskResult = new TaskResult();
+		taskResult.setTaskId(result.getTaskId());
+		taskResult.setResult(result.getResult());
+		taskResult.setFileName(result.getFileName());
+		
+		return taskResult;
 	}
 }

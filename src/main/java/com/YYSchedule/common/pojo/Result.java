@@ -10,101 +10,60 @@ import java.util.Arrays;
 import com.YYSchedule.common.rpc.domain.task.TaskPhase;
 
 /**
- * Result
- * @author yanwei
- * @date 2013-1-17 下午3:27:05
  * 
+ * @author ybt
+ *
+ * @date 2018年8月8日  
+ * @version 1.0
  */
 public class Result implements Serializable {
 	
-	/**
-	 * 
-	 */
 
 	private long taskId;
 	
 	private TaskPhase resultType;
 	
-	private ByteBuffer content;
+	private String result;
 	
-	private byte[] contentByte;
-	
-	/**
-	 * the md5 of byte array result
-	 */
-	private String md5;
+	private String fileName;
 
-
-	/**
-	 * @return the taskId
-	 */
-	public long getTaskId() {
+	public long getTaskId()
+	{
 		return taskId;
 	}
 
-	/**
-	 * @param taskId the taskId to set
-	 */
-	public void setTaskId(long taskId) {
+	public void setTaskId(long taskId)
+	{
 		this.taskId = taskId;
 	}
 
-
-	/**
-	 * @return the resultType
-	 */
-	public TaskPhase getResultType() {
+	public TaskPhase getResultType()
+	{
 		return resultType;
 	}
 
-	/**
-	 * @param resultType the resultType to set
-	 */
-	public void setResultType(TaskPhase resultType) {
+	public void setResultType(TaskPhase resultType)
+	{
 		this.resultType = resultType;
 	}
 
-	/**
-	 * @return the content
-	 */
-	public ByteBuffer getContent() {
-		return content;
+	public String getResult()
+	{
+		return result;
 	}
 
-	/**
-	 * @param content the content to set
-	 */
-	public void setContent(ByteBuffer content) {
-		this.content = content;
+	public void setResult(String result)
+	{
+		this.result = result;
 	}
 
-	/**
-	 * @return the md5
-	 */
-	public String getMd5() {
-		return md5;
+	public String getFileName()
+	{
+		return fileName;
 	}
 
-	/**
-	 * @param md5 the md5 to set
-	 */
-	public void setMd5(String md5) {
-		this.md5 = md5;
+	public void setFileName(String fileName)
+	{
+		this.fileName = fileName;
 	}
-
-	public byte[] getContentByte() {
-		return contentByte;
-	}
-
-	public void setContentByte(byte[] contentByte) {
-		this.contentByte = contentByte;
-	}
-
-	@Override
-	public String toString() {
-		return "Result [taskId=" + taskId +  ", resultType=" + resultType + ", content=" + content + ", contentByte="
-				+ Arrays.toString(contentByte) + ", md5=" + md5 +  "]";
-	}
-	
-	
 }

@@ -3,8 +3,12 @@
  */
 package com.YYSchedule.common.pojo;
 
+import java.util.List;
+
+import com.YYSchedule.common.rpc.domain.engine.EngineLogger;
 import com.YYSchedule.common.rpc.domain.node.NodePayload;
 import com.YYSchedule.common.rpc.domain.task.TaskPhase;
+import com.alibaba.fastjson.JSONObject;
 
 /**
  * NodeItem.java
@@ -38,6 +42,8 @@ public class NodeItem implements Comparable<NodeItem> {
 	private long updatedTime;
 	
 	private TaskPhase taskPhase;
+	
+	private List<EngineLogger> engineLoggerList;
 
 	public NodeItem(int grade) {
 		this.grade = grade;
@@ -62,6 +68,7 @@ public class NodeItem implements Comparable<NodeItem> {
 		this.queueLength = nodePayload.getQueueLength();
 		this.expectedDelay = nodePayload.getExpectedDelay();
 		this.taskPhase = nodePayload.getTaskPhase();
+		this.engineLoggerList = nodePayload.getEngineLoggerList();
 		
 		this.updatedTime = System.currentTimeMillis();
 		
@@ -253,11 +260,19 @@ public class NodeItem implements Comparable<NodeItem> {
 		this.taskPhase = taskPhase;
 	}
 
-	@Override
-	public String toString() {
-		return "NodeItem [nodeId=" + nodeId + ", cpuMhz=" + cpuMhz + ", cpuUsedPerc=" + cpuUsedPerc + ", freeMem=" + freeMem + ", jvmFreeMem=" + jvmFreeMem + ", queueLimit="
-				+ queueLimit + ", queueLength=" + queueLength + ", expectedDelay=" + expectedDelay  + ", grade=" + grade + ", updatedTime=" + updatedTime + "]";
+	public void setEngineLoggerList(List<EngineLogger> engineLoggerList)
+	{
+		this.engineLoggerList = engineLoggerList;
 	}
 
+	public List<EngineLogger> getEngineLoggerList()
+	{
+		return engineLoggerList;
+	}
+
+	@Override
+	public String toString() {
+		return JSONObject.toJSONString(this);
+	}
 	
 }

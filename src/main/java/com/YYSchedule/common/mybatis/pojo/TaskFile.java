@@ -3,9 +3,7 @@ package com.YYSchedule.common.mybatis.pojo;
 public class TaskFile {
     private Long taskId;
 
-    private String fileName;
-
-    private String fileChecksum;
+    private String filePath;
 
     public Long getTaskId() {
         return taskId;
@@ -15,19 +13,11 @@ public class TaskFile {
         this.taskId = taskId;
     }
 
-    public String getFileName() {
-        return fileName;
+    public String getFilePath() {
+        return filePath;
     }
 
-    public void setFileName(String fileName) {
-        this.fileName = fileName == null ? null : fileName.trim();
-    }
-
-    public String getFileChecksum() {
-        return fileChecksum;
-    }
-
-    public void setFileChecksum(String fileChecksum) {
-        this.fileChecksum = fileChecksum == null ? null : fileChecksum.trim();
+    public void setFilePath(String filePath) {
+        this.filePath = filePath == null ? null : filePath.trim();
     }
 }

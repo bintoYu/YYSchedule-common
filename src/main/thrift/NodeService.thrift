@@ -2,7 +2,6 @@
 # 提供给nodemanager使用的接口
 #
 
-include "Container.thrift"
 include "Exception.thrift"
 include "Job.thrift"
 include "Node.thrift"
@@ -18,49 +17,7 @@ namespace py rpc.service.node
 #
 
 /** nodemanager作为服务端，taskmanager远程rpc调用 */
-service TaskCallNodeService{
-	
-	/** 
-	 * execute context
-	 * @param	context
-	 * @return	succeed or not
-	 */
-	i32 submitContext	(
-		1:	required	Container.Context		context
-	)	throws	(
-		1:	Exception.InvalidRequestException	ire,
-		2:	Exception.UnavailableException		ue,
-		3:	Exception.TimeoutException			te
-	),
-					
-	/**
-	 * terminate specific context
-	 * @param	jobId
-	 * @return	succeed or not
-	 */
-	i32	terminateContext	(
-		1:	required	string					taskId
-	)	throws	(
-		1:	Exception.InvalidRequestException	ire,
-		2:	Exception.UnavailableException		ue,
-		3:	Exception.NotFoundException			nfe,
-		4:	Exception.TimeoutException			te
-	),
-	
-	/**
-	 * update program
-	 * @param	program name
-	 * @return	succeed or not
-	 */		
-	i32	updateProgram	(
-		1:	required	string					programName
-	)	throws	(
-		1:	Exception.InvalidRequestException	ire,
-		2:	Exception.UnavailableException		ue,
-		3:	Exception.NotFoundException			nfe,
-		4:	Exception.TimeoutException			te
-	),
-					
+service TaskCallNodeService{				
 	
 	/** 
 	 * obtaining queue information
@@ -80,14 +37,30 @@ service EngineCallNodeService {
 	/**
 	 * receive result
 	 * @param	taskId
-	 * @param	content
-	 * @param	name
+	 * @param	fileName
+	 * @param	result
 	 * @return	succeed or not
 	 */
-	i32 submitResult (
+	i32 transferResult (
 		1:	required	i64 								taskId,
-		2:	required	string 								name,
-		3:	required	binary 								content
+		2:	required	string 								file,
+		3:	required	string 								result
+	)	throws	(
+		1:	Exception.InvalidRequestException				ire,
+		2:	Exception.UnavailableException					ue,
+		3:	Exception.TimeoutException						te
+	),
+	
+	/**
+	 * 提交引擎执行过程中产生的日志信息
+	 * @param	taskId
+	 * @param	content
+	 * @return	succeed or not
+	 */
+	i32 submitExecutionLogger (
+		1:	required	i64 								taskId,
+		2:	required	string 								file,
+		3:	required	string 								content
 	)	throws	(
 		1:	Exception.InvalidRequestException				ire,
 		2:	Exception.UnavailableException					ue,
