@@ -210,20 +210,5 @@ service NodeCallTaskService {
 		2:	Exception.UnavailableException 					ue,
 		3:	Exception.TimeoutException 						te
 	),
-	
-	/**
-	 * receive result
-	 * @param	taskId
-	 * @param	result
-	 * @param	name
-	 * @return	succeed or not
-	 */
-	i32 submitResult (
-		1:	required	i64 								taskId,
-		2:	required	string 								result
-	)	throws	(
-		1:	Exception.InvalidRequestException				ire,
-		2:	Exception.UnavailableException					ue,
-		3:	Exception.TimeoutException						te
-	),
+
 }

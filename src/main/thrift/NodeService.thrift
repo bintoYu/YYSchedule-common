@@ -39,12 +39,15 @@ service EngineCallNodeService {
 	 * @param	taskId
 	 * @param	fileName
 	 * @param	result
+	 * @param	logger
 	 * @return	succeed or not
 	 */
 	i32 transferResult (
 		1:	required	i64 								taskId,
 		2:	required	string 								file,
-		3:	required	string 								result
+		3:	optional	string 								result,
+		4:	required	string 								logger,
+		5:	required	bool								isSuccess,
 	)	throws	(
 		1:	Exception.InvalidRequestException				ire,
 		2:	Exception.UnavailableException					ue,

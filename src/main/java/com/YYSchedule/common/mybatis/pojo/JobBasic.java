@@ -7,7 +7,11 @@ public class JobBasic {
 
     private String taskPhase;
 
-    private Integer taskCount;
+    private Long committedTime;
+
+    private Integer taskNum;
+
+    private Integer finishNum;
 
     public Long getJobId() {
         return jobId;
@@ -33,11 +37,27 @@ public class JobBasic {
         this.taskPhase = taskPhase == null ? null : taskPhase.trim();
     }
 
-    public Integer getTaskCount() {
-        return taskCount;
+    public Long getCommittedTime() {
+        return committedTime;
     }
 
-    public void setTaskCount(Integer taskCount) {
-        this.taskCount = taskCount;
+    public void setCommittedTime(Long committedTime) {
+        this.committedTime = committedTime;
+    }
+
+    public Integer getTaskNum() {
+        return taskNum;
+    }
+
+    public void setTaskNum(Integer taskNum) {
+        this.taskNum = taskNum;
+    }
+
+    public Integer getFinishNum() {
+        return finishNum;
+    }
+
+    public void setFinishNum(Integer finishNum) {
+        this.finishNum = finishNum;
     }
 }

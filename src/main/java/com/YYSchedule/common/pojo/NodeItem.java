@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.YYSchedule.common.pojo;
 
 import java.util.List;
@@ -13,22 +10,18 @@ import com.alibaba.fastjson.JSONObject;
 /**
  * NodeItem.java
  * 
- * @description node for scheduling
+ * @description 记录心跳信息
  */
 public class NodeItem implements Comparable<NodeItem> {
 
 	private String nodeId;
 	
-	private int cpuCount;
-
-	private int cpuCores;
-
-	private int cpuMhz;
+	private boolean isBroken;
 
 	private double cpuUsedPerc;
 
 	private long freeMem;
-
+	
 	private long jvmFreeMem;
 
 	private int queueLimit;
@@ -40,6 +33,8 @@ public class NodeItem implements Comparable<NodeItem> {
 	private int grade;
 
 	private long updatedTime;
+	
+	private int consumerThreadNum;
 	
 	private TaskPhase taskPhase;
 	
@@ -57,16 +52,13 @@ public class NodeItem implements Comparable<NodeItem> {
 
 		this.nodeId = nodePayload.getNodeId();
 		
-		this.cpuCount = nodePayload.getNodeRuntime().getCpuCount();
-		this.cpuCores = nodePayload.getNodeRuntime().getCpuCores();
-		this.cpuMhz = nodePayload.getNodeRuntime().getCpuMhz();
+		this.isBroken = false;
 		this.cpuUsedPerc = nodePayload.getNodeRuntime().getCpuUsedPerc();
 		this.freeMem = nodePayload.getNodeRuntime().getFreeMem();
 		this.jvmFreeMem = nodePayload.getNodeRuntime().getJvmFreeMem();
 
 		this.queueLimit = nodePayload.getQueueLimit();
 		this.queueLength = nodePayload.getQueueLength();
-		this.expectedDelay = nodePayload.getExpectedDelay();
 		this.taskPhase = nodePayload.getTaskPhase();
 		this.engineLoggerList = nodePayload.getEngineLoggerList();
 		
@@ -76,7 +68,6 @@ public class NodeItem implements Comparable<NodeItem> {
 		getGrade(this.cpuUsedPerc,this.queueLength);
 	}
 	
-
 	/**
 	 * node performance evaluate equation
 	 * 
@@ -160,15 +151,6 @@ public class NodeItem implements Comparable<NodeItem> {
 		this.nodeId = nodeId;
 	}
 
-	public int getCpuCount()
-	{
-		return cpuCount;
-	}
-
-	public void setCpuCount(int cpuCount)
-	{
-		this.cpuCount = cpuCount;
-	}
 
 	public int getQueueLimit() {
 		return queueLimit;
@@ -178,20 +160,24 @@ public class NodeItem implements Comparable<NodeItem> {
 		this.queueLimit = queueLimit;
 	}
 
-	public int getCpuCores() {
-		return cpuCores;
+	public long getJvmFreeMem()
+	{
+		return jvmFreeMem;
 	}
 
-	public void setCpuCores(int cpuCores) {
-		this.cpuCores = cpuCores;
+	public void setJvmFreeMem(long jvmFreeMem)
+	{
+		this.jvmFreeMem = jvmFreeMem;
 	}
 
-	public int getCpuMhz() {
-		return cpuMhz;
+	public int getConsumerThreadNum()
+	{
+		return consumerThreadNum;
 	}
 
-	public void setCpuMhz(int cpuMhz) {
-		this.cpuMhz = cpuMhz;
+	public void setConsumerThreadNum(int consumerThreadNum)
+	{
+		this.consumerThreadNum = consumerThreadNum;
 	}
 
 	public double getCpuUsedPerc() {
@@ -208,14 +194,6 @@ public class NodeItem implements Comparable<NodeItem> {
 
 	public void setFreeMem(long freeMem) {
 		this.freeMem = freeMem;
-	}
-
-	public long getJvmFreeMem() {
-		return jvmFreeMem;
-	}
-
-	public void setJvmFreeMem(long jvmFreeMem) {
-		this.jvmFreeMem = jvmFreeMem;
 	}
 
 	public int getQueueLength() {
@@ -269,6 +247,18 @@ public class NodeItem implements Comparable<NodeItem> {
 	{
 		return engineLoggerList;
 	}
+
+	public boolean isBroken()
+	{
+		return isBroken;
+	}
+
+	public void setBroken(boolean isBroken)
+	{
+		this.isBroken = isBroken;
+	}
+
+
 
 	@Override
 	public String toString() {

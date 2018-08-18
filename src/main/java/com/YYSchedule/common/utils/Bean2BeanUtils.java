@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.YYSchedule.common.mybatis.pojo.JobBasic;
-import com.YYSchedule.common.mybatis.pojo.JobStatus;
 import com.YYSchedule.common.mybatis.pojo.MissionBasic;
+import com.YYSchedule.common.mybatis.pojo.Node;
 import com.YYSchedule.common.mybatis.pojo.TaskBasic;
 import com.YYSchedule.common.mybatis.pojo.TaskFile;
 import com.YYSchedule.common.mybatis.pojo.TaskResult;
@@ -33,28 +33,19 @@ public class Bean2BeanUtils
 		return missionBasic;
 	}
 	
-	public static JobBasic Job2JobBasic(Job job)
+	public static JobBasic Job2JobBasic(Job job,int taskNum)
 	{
 		JobBasic jobBasic = new JobBasic();
 		
 		jobBasic.setJobId(job.getJobId());
 		jobBasic.setJobPriority(job.getJobPriority().toString());
 		jobBasic.setTaskPhase(job.getTaskPhase().toString());
+		jobBasic.setTaskNum(taskNum);
+		jobBasic.setCommittedTime(System.currentTimeMillis());
 		
 		return jobBasic;
 	}
 	
-	public static JobStatus Job2JobStatus(Job job,int taskNum)
-	{
-		JobStatus jobStatus = new JobStatus();
-		
-		jobStatus.setJobId(job.getJobId());
-		jobStatus.setJobStatus(0.0);
-		jobStatus.setTaskNum(taskNum);
-		jobStatus.setCommittedTime(System.currentTimeMillis());
-		
-		return jobStatus;
-	}
 	
 	public static TaskBasic task2TaskBasic(Task task)
 	{
@@ -63,6 +54,7 @@ public class Bean2BeanUtils
 		taskBasic.setTaskPhase(task.getTaskPhase().toString());
 		taskBasic.setTaskStatus(task.getTaskStatus().toString());
 		taskBasic.setLoadedTime(task.getLoadedTime());
+		
 		
 		return taskBasic;
 	}
@@ -120,14 +112,10 @@ public class Bean2BeanUtils
 		nodePayload.setNodeId(nodeItem.getNodeId());
 		nodePayload.setQueueLimit(nodeItem.getQueueLimit());
 		nodePayload.setQueueLength(nodeItem.getQueueLength());
-		nodePayload.setExpectedDelay(nodeItem.getExpectedDelay());
 		nodePayload.setTaskPhase(nodeItem.getTaskPhase());
 		nodePayload.setEngineLoggerList(nodeItem.getEngineLoggerList());
 		
 		NodeRuntime nodeRuntime = new NodeRuntime();
-		nodeRuntime.setCpuCount(nodeItem.getCpuCount());
-		nodeRuntime.setCpuCores(nodeItem.getCpuCores());
-		nodeRuntime.setCpuMhz(nodeItem.getCpuMhz());
 		nodeRuntime.setCpuUsedPerc(nodeItem.getCpuUsedPerc());
 		nodeRuntime.setFreeMem(nodeItem.getFreeMem());
 		nodeRuntime.setJvmFreeMem(nodeItem.getJvmFreeMem());
@@ -162,7 +150,10 @@ public class Bean2BeanUtils
 		taskResult.setTaskId(result.getTaskId());
 		taskResult.setResult(result.getResult());
 		taskResult.setFileName(result.getFileName());
+		taskResult.setLogger(result.getLogger());
 		
 		return taskResult;
 	}
+	
+
 }

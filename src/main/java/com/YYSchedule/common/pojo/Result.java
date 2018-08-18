@@ -8,6 +8,7 @@ import java.nio.ByteBuffer;
 import java.util.Arrays;
 
 import com.YYSchedule.common.rpc.domain.task.TaskPhase;
+import com.YYSchedule.common.rpc.domain.task.TaskStatus;
 
 /**
  * 
@@ -17,16 +18,23 @@ import com.YYSchedule.common.rpc.domain.task.TaskPhase;
  * @version 1.0
  */
 public class Result implements Serializable {
-	
 
 	private long taskId;
 	
-	private TaskPhase resultType;
+	private TaskPhase taskPhase;
+	
+	private TaskStatus taskStatus;
 	
 	private String result;
 	
 	private String fileName;
-
+	
+	private String logger;
+	
+	private String nodeId;
+	
+	private long finishedTime;
+	
 	public long getTaskId()
 	{
 		return taskId;
@@ -37,14 +45,14 @@ public class Result implements Serializable {
 		this.taskId = taskId;
 	}
 
-	public TaskPhase getResultType()
+	public TaskPhase getTaskPhase()
 	{
-		return resultType;
+		return taskPhase;
 	}
 
-	public void setResultType(TaskPhase resultType)
+	public void setTaskPhase(TaskPhase taskPhase)
 	{
-		this.resultType = resultType;
+		this.taskPhase = taskPhase;
 	}
 
 	public String getResult()
@@ -66,4 +74,46 @@ public class Result implements Serializable {
 	{
 		this.fileName = fileName;
 	}
+
+	public String getLogger()
+	{
+		return logger;
+	}
+
+	public void setLogger(String logger)
+	{
+		this.logger = logger;
+	}
+
+	public String getNodeId()
+	{
+		return nodeId;
+	}
+
+	public void setNodeId(String nodeId)
+	{
+		this.nodeId = nodeId;
+	}
+	
+	public TaskStatus getTaskStatus()
+	{
+		return taskStatus;
+	}
+	
+	public void setTaskStatus(TaskStatus taskStatus)
+	{
+		this.taskStatus = taskStatus;
+	}
+
+	public long getFinishedTime()
+	{
+		return finishedTime;
+	}
+
+	public void setFinishedTime(long finishedTime)
+	{
+		this.finishedTime = finishedTime;
+	}
+	
+	
 }

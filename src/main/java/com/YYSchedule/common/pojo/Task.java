@@ -9,7 +9,7 @@ import com.YYSchedule.common.rpc.domain.task.TaskStatus;
 
 /**
  * Task.java
- * @author yubingtao
+ * @author ybt
  * @date 2018-6-25 
  * @description
  */

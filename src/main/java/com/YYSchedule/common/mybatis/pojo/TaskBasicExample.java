@@ -364,73 +364,73 @@ public class TaskBasicExample {
             return (Criteria) this;
         }
 
-        public Criteria andExecutorIdIsNull() {
-            addCriterion("executor_id is null");
+        public Criteria andNodeIdIsNull() {
+            addCriterion("node_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andExecutorIdIsNotNull() {
-            addCriterion("executor_id is not null");
+        public Criteria andNodeIdIsNotNull() {
+            addCriterion("node_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andExecutorIdEqualTo(String value) {
-            addCriterion("executor_id =", value, "executorId");
+        public Criteria andNodeIdEqualTo(String value) {
+            addCriterion("node_id =", value, "nodeId");
             return (Criteria) this;
         }
 
-        public Criteria andExecutorIdNotEqualTo(String value) {
-            addCriterion("executor_id <>", value, "executorId");
+        public Criteria andNodeIdNotEqualTo(String value) {
+            addCriterion("node_id <>", value, "nodeId");
             return (Criteria) this;
         }
 
-        public Criteria andExecutorIdGreaterThan(String value) {
-            addCriterion("executor_id >", value, "executorId");
+        public Criteria andNodeIdGreaterThan(String value) {
+            addCriterion("node_id >", value, "nodeId");
             return (Criteria) this;
         }
 
-        public Criteria andExecutorIdGreaterThanOrEqualTo(String value) {
-            addCriterion("executor_id >=", value, "executorId");
+        public Criteria andNodeIdGreaterThanOrEqualTo(String value) {
+            addCriterion("node_id >=", value, "nodeId");
             return (Criteria) this;
         }
 
-        public Criteria andExecutorIdLessThan(String value) {
-            addCriterion("executor_id <", value, "executorId");
+        public Criteria andNodeIdLessThan(String value) {
+            addCriterion("node_id <", value, "nodeId");
             return (Criteria) this;
         }
 
-        public Criteria andExecutorIdLessThanOrEqualTo(String value) {
-            addCriterion("executor_id <=", value, "executorId");
+        public Criteria andNodeIdLessThanOrEqualTo(String value) {
+            addCriterion("node_id <=", value, "nodeId");
             return (Criteria) this;
         }
 
-        public Criteria andExecutorIdLike(String value) {
-            addCriterion("executor_id like", value, "executorId");
+        public Criteria andNodeIdLike(String value) {
+            addCriterion("node_id like", value, "nodeId");
             return (Criteria) this;
         }
 
-        public Criteria andExecutorIdNotLike(String value) {
-            addCriterion("executor_id not like", value, "executorId");
+        public Criteria andNodeIdNotLike(String value) {
+            addCriterion("node_id not like", value, "nodeId");
             return (Criteria) this;
         }
 
-        public Criteria andExecutorIdIn(List<String> values) {
-            addCriterion("executor_id in", values, "executorId");
+        public Criteria andNodeIdIn(List<String> values) {
+            addCriterion("node_id in", values, "nodeId");
             return (Criteria) this;
         }
 
-        public Criteria andExecutorIdNotIn(List<String> values) {
-            addCriterion("executor_id not in", values, "executorId");
+        public Criteria andNodeIdNotIn(List<String> values) {
+            addCriterion("node_id not in", values, "nodeId");
             return (Criteria) this;
         }
 
-        public Criteria andExecutorIdBetween(String value1, String value2) {
-            addCriterion("executor_id between", value1, value2, "executorId");
+        public Criteria andNodeIdBetween(String value1, String value2) {
+            addCriterion("node_id between", value1, value2, "nodeId");
             return (Criteria) this;
         }
 
-        public Criteria andExecutorIdNotBetween(String value1, String value2) {
-            addCriterion("executor_id not between", value1, value2, "executorId");
+        public Criteria andNodeIdNotBetween(String value1, String value2) {
+            addCriterion("node_id not between", value1, value2, "nodeId");
             return (Criteria) this;
         }
     }

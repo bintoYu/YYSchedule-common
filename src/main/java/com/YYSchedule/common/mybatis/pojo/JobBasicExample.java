@@ -304,63 +304,183 @@ public class JobBasicExample {
             return (Criteria) this;
         }
 
-        public Criteria andTaskCountIsNull() {
-            addCriterion("task_count is null");
+        public Criteria andCommittedTimeIsNull() {
+            addCriterion("committed_time is null");
             return (Criteria) this;
         }
 
-        public Criteria andTaskCountIsNotNull() {
-            addCriterion("task_count is not null");
+        public Criteria andCommittedTimeIsNotNull() {
+            addCriterion("committed_time is not null");
             return (Criteria) this;
         }
 
-        public Criteria andTaskCountEqualTo(Integer value) {
-            addCriterion("task_count =", value, "taskCount");
+        public Criteria andCommittedTimeEqualTo(Long value) {
+            addCriterion("committed_time =", value, "committedTime");
             return (Criteria) this;
         }
 
-        public Criteria andTaskCountNotEqualTo(Integer value) {
-            addCriterion("task_count <>", value, "taskCount");
+        public Criteria andCommittedTimeNotEqualTo(Long value) {
+            addCriterion("committed_time <>", value, "committedTime");
             return (Criteria) this;
         }
 
-        public Criteria andTaskCountGreaterThan(Integer value) {
-            addCriterion("task_count >", value, "taskCount");
+        public Criteria andCommittedTimeGreaterThan(Long value) {
+            addCriterion("committed_time >", value, "committedTime");
             return (Criteria) this;
         }
 
-        public Criteria andTaskCountGreaterThanOrEqualTo(Integer value) {
-            addCriterion("task_count >=", value, "taskCount");
+        public Criteria andCommittedTimeGreaterThanOrEqualTo(Long value) {
+            addCriterion("committed_time >=", value, "committedTime");
             return (Criteria) this;
         }
 
-        public Criteria andTaskCountLessThan(Integer value) {
-            addCriterion("task_count <", value, "taskCount");
+        public Criteria andCommittedTimeLessThan(Long value) {
+            addCriterion("committed_time <", value, "committedTime");
             return (Criteria) this;
         }
 
-        public Criteria andTaskCountLessThanOrEqualTo(Integer value) {
-            addCriterion("task_count <=", value, "taskCount");
+        public Criteria andCommittedTimeLessThanOrEqualTo(Long value) {
+            addCriterion("committed_time <=", value, "committedTime");
             return (Criteria) this;
         }
 
-        public Criteria andTaskCountIn(List<Integer> values) {
-            addCriterion("task_count in", values, "taskCount");
+        public Criteria andCommittedTimeIn(List<Long> values) {
+            addCriterion("committed_time in", values, "committedTime");
             return (Criteria) this;
         }
 
-        public Criteria andTaskCountNotIn(List<Integer> values) {
-            addCriterion("task_count not in", values, "taskCount");
+        public Criteria andCommittedTimeNotIn(List<Long> values) {
+            addCriterion("committed_time not in", values, "committedTime");
             return (Criteria) this;
         }
 
-        public Criteria andTaskCountBetween(Integer value1, Integer value2) {
-            addCriterion("task_count between", value1, value2, "taskCount");
+        public Criteria andCommittedTimeBetween(Long value1, Long value2) {
+            addCriterion("committed_time between", value1, value2, "committedTime");
             return (Criteria) this;
         }
 
-        public Criteria andTaskCountNotBetween(Integer value1, Integer value2) {
-            addCriterion("task_count not between", value1, value2, "taskCount");
+        public Criteria andCommittedTimeNotBetween(Long value1, Long value2) {
+            addCriterion("committed_time not between", value1, value2, "committedTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andTaskNumIsNull() {
+            addCriterion("task_num is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTaskNumIsNotNull() {
+            addCriterion("task_num is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTaskNumEqualTo(Integer value) {
+            addCriterion("task_num =", value, "taskNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andTaskNumNotEqualTo(Integer value) {
+            addCriterion("task_num <>", value, "taskNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andTaskNumGreaterThan(Integer value) {
+            addCriterion("task_num >", value, "taskNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andTaskNumGreaterThanOrEqualTo(Integer value) {
+            addCriterion("task_num >=", value, "taskNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andTaskNumLessThan(Integer value) {
+            addCriterion("task_num <", value, "taskNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andTaskNumLessThanOrEqualTo(Integer value) {
+            addCriterion("task_num <=", value, "taskNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andTaskNumIn(List<Integer> values) {
+            addCriterion("task_num in", values, "taskNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andTaskNumNotIn(List<Integer> values) {
+            addCriterion("task_num not in", values, "taskNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andTaskNumBetween(Integer value1, Integer value2) {
+            addCriterion("task_num between", value1, value2, "taskNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andTaskNumNotBetween(Integer value1, Integer value2) {
+            addCriterion("task_num not between", value1, value2, "taskNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andFinishNumIsNull() {
+            addCriterion("finish_num is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFinishNumIsNotNull() {
+            addCriterion("finish_num is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFinishNumEqualTo(Integer value) {
+            addCriterion("finish_num =", value, "finishNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andFinishNumNotEqualTo(Integer value) {
+            addCriterion("finish_num <>", value, "finishNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andFinishNumGreaterThan(Integer value) {
+            addCriterion("finish_num >", value, "finishNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andFinishNumGreaterThanOrEqualTo(Integer value) {
+            addCriterion("finish_num >=", value, "finishNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andFinishNumLessThan(Integer value) {
+            addCriterion("finish_num <", value, "finishNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andFinishNumLessThanOrEqualTo(Integer value) {
+            addCriterion("finish_num <=", value, "finishNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andFinishNumIn(List<Integer> values) {
+            addCriterion("finish_num in", values, "finishNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andFinishNumNotIn(List<Integer> values) {
+            addCriterion("finish_num not in", values, "finishNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andFinishNumBetween(Integer value1, Integer value2) {
+            addCriterion("finish_num between", value1, value2, "finishNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andFinishNumNotBetween(Integer value1, Integer value2) {
+            addCriterion("finish_num not between", value1, value2, "finishNum");
             return (Criteria) this;
         }
     }
