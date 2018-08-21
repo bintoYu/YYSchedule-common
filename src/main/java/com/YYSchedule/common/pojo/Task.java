@@ -6,6 +6,7 @@ import com.YYSchedule.common.rpc.domain.job.JobPriority;
 import com.YYSchedule.common.rpc.domain.parameter.JobParameter;
 import com.YYSchedule.common.rpc.domain.task.TaskPhase;
 import com.YYSchedule.common.rpc.domain.task.TaskStatus;
+import com.alibaba.fastjson.JSONObject;
 
 /**
  * Task.java
@@ -183,12 +184,7 @@ public class Task implements Comparable<Task>,Serializable{
 	@Override
 	public String toString()
 	{
-		return "Task [taskId=" + taskId + ", taskPriority=" + taskPriority
-				+ ", taskPhase=" + taskPhase + ", fileName=" + fileName
-				+ ", jobParameter=" + jobParameter + ", taskStatus="
-				+ taskStatus + ", loadedTime=" + loadedTime
-				+ ", schedulingTime=" + schedulingTime + ", timeout=" + timeout
-				+ "]";
+		return JSONObject.toJSONString(this);
 	}
 
 

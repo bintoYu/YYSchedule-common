@@ -5,10 +5,10 @@ import java.util.List;
 
 import com.YYSchedule.common.mybatis.pojo.JobBasic;
 import com.YYSchedule.common.mybatis.pojo.MissionBasic;
-import com.YYSchedule.common.mybatis.pojo.Node;
 import com.YYSchedule.common.mybatis.pojo.TaskBasic;
 import com.YYSchedule.common.mybatis.pojo.TaskFile;
 import com.YYSchedule.common.mybatis.pojo.TaskResult;
+import com.YYSchedule.common.mybatis.pojo.TaskTemp;
 import com.YYSchedule.common.mybatis.pojo.TaskTimestamp;
 import com.YYSchedule.common.pojo.NodeItem;
 import com.YYSchedule.common.pojo.Result;
@@ -104,6 +104,20 @@ public class Bean2BeanUtils
 		}
 		
 		return taskTimestampList;
+	}
+	
+	public static List<TaskTemp> taskList2TaskTempList(List<Task> taskList)
+	{
+		List<TaskTemp> taskTempList= new ArrayList<>();
+		for(Task task : taskList)
+		{
+			TaskTemp taskTemp = new TaskTemp();
+			taskTemp.setTaskId(task.getTaskId());
+			taskTemp.setTask(task.toString());
+			taskTempList.add(taskTemp);
+		}
+		
+		return taskTempList;
 	}
 	
 	public static NodePayload nodeItem2NodePayload(NodeItem nodeItem)

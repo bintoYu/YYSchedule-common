@@ -16,7 +16,9 @@ import org.apache.thrift.TEnum;
  */
 public enum TaskPhase implements org.apache.thrift.TEnum {
   COMMON(0),
-  STATIC(1);
+  STATIC(1),
+  DYNAMIC(2),
+  CUCKOO(3);
 
   private final int value;
 
@@ -41,6 +43,10 @@ public enum TaskPhase implements org.apache.thrift.TEnum {
         return COMMON;
       case 1:
         return STATIC;
+      case 2:
+        return DYNAMIC;
+      case 3:
+        return CUCKOO;
       default:
         return null;
     }

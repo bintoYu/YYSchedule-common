@@ -10,6 +10,8 @@ namespace py rpc.task
 enum TaskPhase {
     COMMON,
 	STATIC,
+	DYNAMIC,
+	CUCKOO,
 }
 
 /** task status enumeration */
