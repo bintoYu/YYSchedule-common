@@ -15,7 +15,6 @@ struct Mission {
 	1:	required 	i32 					userId,
 	2:	required	string					missionName,
 	3:  optional    i32						missionId,
-	4:	required	list<string> 			fileList,
-	5:	required	list<Job.Job>			jobList,
-	6:	optional	i64						impatienceTime
+	4:	required	list<Job.Job>			jobList,
+	5:	optional	i64						impatienceTime
 }

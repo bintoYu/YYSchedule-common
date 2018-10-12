@@ -258,8 +258,6 @@ public class NodeItem implements Comparable<NodeItem> {
 		this.isBroken = isBroken;
 	}
 
-
-
 	@Override
 	public String toString() {
 		return JSONObject.toJSONString(this);

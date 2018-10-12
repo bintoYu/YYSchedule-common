@@ -29,7 +29,8 @@ struct Job{
 	1:	optional	i64					jobId,
 	2:	required	JobPriority			jobPriority,
 	3:	required	Task.TaskPhase		taskPhase,
-	4:	optional	i64					timeout,
-	5:	required	Parameter.JobParameter	jobParameter,
-	6:	optional	double				jobStatus,	
+	4:	required	list<string> 			fileList,
+	5:	optional	i64					timeout,
+	6:	required	Parameter.JobParameter	jobParameter,
+	7:	optional	double				jobStatus,	
 }

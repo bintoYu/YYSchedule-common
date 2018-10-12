@@ -433,6 +433,66 @@ public class TaskBasicExample {
             addCriterion("node_id not between", value1, value2, "nodeId");
             return (Criteria) this;
         }
+
+        public Criteria andFailureCountIsNull() {
+            addCriterion("failure_count is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFailureCountIsNotNull() {
+            addCriterion("failure_count is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFailureCountEqualTo(Integer value) {
+            addCriterion("failure_count =", value, "failureCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andFailureCountNotEqualTo(Integer value) {
+            addCriterion("failure_count <>", value, "failureCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andFailureCountGreaterThan(Integer value) {
+            addCriterion("failure_count >", value, "failureCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andFailureCountGreaterThanOrEqualTo(Integer value) {
+            addCriterion("failure_count >=", value, "failureCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andFailureCountLessThan(Integer value) {
+            addCriterion("failure_count <", value, "failureCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andFailureCountLessThanOrEqualTo(Integer value) {
+            addCriterion("failure_count <=", value, "failureCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andFailureCountIn(List<Integer> values) {
+            addCriterion("failure_count in", values, "failureCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andFailureCountNotIn(List<Integer> values) {
+            addCriterion("failure_count not in", values, "failureCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andFailureCountBetween(Integer value1, Integer value2) {
+            addCriterion("failure_count between", value1, value2, "failureCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andFailureCountNotBetween(Integer value1, Integer value2) {
+            addCriterion("failure_count not between", value1, value2, "failureCount");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

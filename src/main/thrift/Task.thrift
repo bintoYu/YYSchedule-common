@@ -12,6 +12,7 @@ enum TaskPhase {
 	STATIC,
 	DYNAMIC,
 	CUCKOO,
+	VIRUSTOTAL,
 }
 
 /** task status enumeration */

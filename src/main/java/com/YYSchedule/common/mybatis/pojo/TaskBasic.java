@@ -11,6 +11,8 @@ public class TaskBasic {
 
     private String nodeId;
 
+    private Integer failureCount;
+
     public Long getTaskId() {
         return taskId;
     }
@@ -49,5 +51,13 @@ public class TaskBasic {
 
     public void setNodeId(String nodeId) {
         this.nodeId = nodeId == null ? null : nodeId.trim();
+    }
+
+    public Integer getFailureCount() {
+        return failureCount;
+    }
+
+    public void setFailureCount(Integer failureCount) {
+        this.failureCount = failureCount;
     }
 }

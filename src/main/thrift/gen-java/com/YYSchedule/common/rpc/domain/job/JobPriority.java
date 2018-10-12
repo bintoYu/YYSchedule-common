@@ -4,7 +4,7 @@
  * DO NOT EDIT UNLESS YOU ARE SURE THAT YOU KNOW WHAT YOU ARE DOING
  *  @generated
  */
-package com.YYSchedule.common.rpc.domain.task;
+package com.YYSchedule.common.rpc.domain.job;
 
 
 import java.util.Map;
@@ -12,18 +12,23 @@ import java.util.HashMap;
 import org.apache.thrift.TEnum;
 
 /**
- * task type enumeration
+ * job priority
+ *  HIGHER
+ *  HIGH
+ *  MEDIUM
+ *  LOW
+ *  LOWER
  */
-public enum TaskPhase implements org.apache.thrift.TEnum {
-  COMMON(0),
-  STATIC(1),
-  DYNAMIC(2),
-  CUCKOO(3),
-  VIRUSTOTAL(4);
+public enum JobPriority implements org.apache.thrift.TEnum {
+  HIGHER(9),
+  HIGH(6),
+  MEDIUM(4),
+  LOW(2),
+  LOWER(0);
 
   private final int value;
 
-  private TaskPhase(int value) {
+  private JobPriority(int value) {
     this.value = value;
   }
 
@@ -38,18 +43,18 @@ public enum TaskPhase implements org.apache.thrift.TEnum {
    * Find a the enum type by its integer value, as defined in the Thrift IDL.
    * @return null if the value is not found.
    */
-  public static TaskPhase findByValue(int value) { 
+  public static JobPriority findByValue(int value) { 
     switch (value) {
-      case 0:
-        return COMMON;
-      case 1:
-        return STATIC;
-      case 2:
-        return DYNAMIC;
-      case 3:
-        return CUCKOO;
+      case 9:
+        return HIGHER;
+      case 6:
+        return HIGH;
       case 4:
-        return VIRUSTOTAL;
+        return MEDIUM;
+      case 2:
+        return LOW;
+      case 0:
+        return LOWER;
       default:
         return null;
     }
