@@ -24,7 +24,7 @@ struct NodeRuntime {
 * nodeRuntime:运行时参数
 * queueLimit:单条队列最大长度
 * queueLength:单条队列现在长度
-* consumerThreadNum:线程个数
+* executorNum:线程个数
 */
 struct NodePayload {
 
@@ -32,7 +32,7 @@ struct NodePayload {
 	2:	required NodeRuntime		nodeRuntime,
 	3:	required i32 				queueLimit,
 	4:	required i32 				queueLength,
-	5:	required i32 				consumerThreadNum,
+	5:	required i32 				executorNum,
 	6:	required Task.TaskPhase		taskPhase,
 	7:	optional list<Engine.EngineLogger> engineLoggerList,
 }
