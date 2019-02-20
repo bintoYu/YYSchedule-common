@@ -4,8 +4,6 @@
 package com.YYSchedule.common.pojo;
 
 import java.io.Serializable;
-import java.nio.ByteBuffer;
-import java.util.Arrays;
 
 import com.YYSchedule.common.rpc.domain.task.TaskPhase;
 import com.YYSchedule.common.rpc.domain.task.TaskStatus;

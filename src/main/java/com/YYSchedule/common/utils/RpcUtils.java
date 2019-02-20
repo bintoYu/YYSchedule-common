@@ -56,6 +56,7 @@ public class RpcUtils {
 		}
 
 		if (!opened) {
+			transport.close();
 			throw new TTransportException("Remote host unreachable.", cause);
 		}
 		TProtocol protocol = new TBinaryProtocol(transport);
