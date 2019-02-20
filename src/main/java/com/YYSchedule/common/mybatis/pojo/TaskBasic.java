@@ -1,5 +1,7 @@
 package com.YYSchedule.common.mybatis.pojo;
 
+import com.YYSchedule.common.pojo.Task;
+
 public class TaskBasic {
     private Long taskId;
 
@@ -12,8 +14,22 @@ public class TaskBasic {
     private String nodeId;
 
     private Integer failureCount;
+    
+    
+	public TaskBasic()
+	{
+		super();
+	}
 
-    public Long getTaskId() {
+	public TaskBasic(Task task)
+	{
+		super();
+		this.taskId = task.getTaskId();
+		this.taskStatus = task.getTaskStatus().toString();
+		this.nodeId = task.getExecutorId();
+	}
+	
+	public Long getTaskId() {
         return taskId;
     }
 
